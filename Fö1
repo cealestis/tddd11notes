@@ -1,0 +1,26 @@
+I := Integer(F); tolkar floaten till integer, typomvandling. Ada är 'hårttypat' språk då datatyperna måste stämma överrens med de dem är. 
+           
+           Ex. ett heltal är alltid en integer.
+            Sedan kan man kopiera som i detta fall och låta en datatyp tolka den andra. 
+            
+            Fakulteter: Om variabeln 1 har ett startvärde som är 0, så kan man inte säga ta I gånger 1, då måste vi säga att I börjar på något värde ex. 1.
+            Odeklarerade variabler: alla har något värde i sig så vi måste se till att de inte har något konstigt värde i sig från början. 
+            Avrundning: Kapar bara decimaldelen från ett flyttal och ger en integer/heltal, men det går att bestämma hur den ska avrunda. 
+            
+
+F := Float(3 / 2); -- =1 då 3 och 2 är två heltal. 3/2 = 1/2 + 1 så man pockar ut ettan, vid 3 mod 2
+                
+   7/3 = heltalsdel A + rest/3, A är hur många treor kan man få ut ur 7? och resten är liggande stolen som är kvar som inte gick att dela upp i 3, 
+   dvs ettan i detta fall. Blir en decimaldel och gör att man kan räkna det som ett flyttal. Så om I := 3 mod 2 så blir det heltalet i det. 
+                
+C := '2': är en character, markeras med apostroferna
+I := '2': är en integer och inte en character
+
+B := True;      Måste deklarera att bolean är en variabel, men behöver inte ge den någon true eller false. 
+
+B := (I < 8); I jämförs med 8, om I har varit 7 så blir boolean true, om I vore 10 så blir bolean false. Jämförelseberäkning!
+
+
+
+
+
