@@ -99,6 +99,7 @@ ctrl + K (kill) tar bort en helrad
 ctrl + Y (yank) ta tbx det man tar bort
 ctrl + x + (antal, ex 2) delar man upp emacs i (antal) fönster
 ctrl + x + 1 tar bort alla andra rutor utom den man står i nu. 
+ctrl + c stoppa en loop
 
 Case-satsen: om man har flera sekvenser och val, behövs dock inte i kursen.
 
