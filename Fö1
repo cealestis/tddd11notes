@@ -135,6 +135,8 @@ då den satsen garanterat kommer gå in och ut i sina satser, men kan lägga til
                       Put(i);
            end loop;
 
+Get_Line(S,I); sedan krav på stränglängden typ I < 10
+
 
 
 
