@@ -44,3 +44,32 @@ begin
    Put(H, Width=>0); 
    
    Skip_Line; New_Line
+   
+    Put("Skriv in fem heltal: "); 
+   Get(I); 
+   Get(C);
+   
+   Put("Du skrev in talen: ");  
+   Put(I,2);  -- 2an betyder Width
+   Put(C);
+   
+   Get(I); 
+   Put(I,2);
+   
+   Put(C); 
+   Get(I);
+   
+   Put(I,2); 
+   Put(C); 
+   
+   Get(I); 
+   Put(I,2);
+   Put(C);
+   
+   Get(I); 
+   Put(I,2);
+   
+   New_Line;
+   Skip_Line;
+   
+   
