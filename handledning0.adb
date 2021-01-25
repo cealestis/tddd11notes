@@ -122,13 +122,18 @@ end Hand0;
    --konvertera en datatyp till en annan, ex. addera en float och en integer för att få ett heltal:
    Summa, F: Float;
    I:Integer;
+    
+   Put("Skriv in ett heltal och ett flyttal du vill addera: ");
+   Get(I);
+   Get(F);
    
    Summa := Float(I) + (F);
-   Put(Summa);
+   Put(Summa,0,1,0);
    
-   Integer(F); --kommer avrunda ett flyttal
+   -- Integer(F); --kommer avrunda ett flyttal
    
    -- markera och klicka på tab så radar det upp sig snyggt
+  
    
    
    
