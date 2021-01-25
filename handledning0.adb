@@ -72,4 +72,20 @@ begin
    New_Line;
    Skip_Line;
    
+   Put("Skriv in ett heltal och ett flyttal: ");
+   Get(I);
+   Get(F);
+   
+   Put("Du skrev in heltalet: ");
+   Put(I,2);
+   
+   Put(" och flyttalet: ");
+   Put(F, Fore=>0, Aft=>3, Exp=>0);
+   
+   Skip_Line; New_Line; -- detta funkar dock inte med att man kan klicka enter osv vid inmatning som står vid körexempel. Hur?
+   --
+   
+   
+   
+   
    
