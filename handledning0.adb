@@ -1,6 +1,6 @@
   
--- Get_Line r�knar hur m�nga characters den tar in tills entertecknet, deklarerat en str�ng som �r tio tecken noll, g�r s� att den l�ser fram till ett entertecken och r�knar hur m�nga 
-tecken den har l�st in fr�n bufferten. Om man skriver d� Hem och sen enter s� h�mtar get line str�ngen och r�knar varje tecken i str�ngen och plussar p� ett p� interger. 
+-- Get_Line r�knar hur m�nga characters den tar in tills entertecknet, deklarerat en str�ng som �r tio tecken noll, g�r s� att den l�ser fram till ett entertecken och 
+-- r�knar hur m�nga tecken den har l�st in fr�n bufferten. Om man skriver d� Hem och sen enter s� h�mtar get line str�ngen och r�knar varje tecken i str�ngen och plussar p� ett p� interger. 
 
 -- Integervariabel Int, f�r att skriva om Integer I := Integer(F); avrundar upp�t
 
