@@ -1,0 +1,27 @@
+with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+
+procedure Hand0 is
+   
+   I,X,Y: Integer;
+   F: Float;
+   S: String(1..10);
+   C: Character;
+
+begin
+   Y := 0; --y har värdet noll om ordet inte innehåller c
+   
+   Put("Mata in ett ord: ");
+   Get_Line(S,X);
+   
+   for C in 1..I loop
+      
+      if S(C) = 'C' then
+	 Put("Ordet inneh�ller C");
+	 Y := 1;
+	 
+	 exit;
+      end if;    
+   end loop;
+
+	
