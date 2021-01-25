@@ -24,4 +24,40 @@ begin
       end if;    
    end loop;
 
+
+-- ELLER DENNA 
+ 
+ 
+ 
+with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+
+procedure Hand0 is
+   
+   I,X: Integer;
+   F: Float;
+   S: String(1..10);
+   C: Character;
+   
+begin
+   --hitta en bokstav i ett ord
+   
+ 
+      Put("Skriv in ett ord: ");
+      Get_Line(S,X);
+      
+      for C in 1..X loop
+	 
+	 if S(C) = 'c' then
+	    Put_Line("'c' finns!");
+	    exit;
+	 else
+	    Put("'c' finns inte");
+	    exit;
+	 end if;
+   
+      end loop;
+
+	
+end Hand0;
 	
