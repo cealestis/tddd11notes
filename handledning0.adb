@@ -1,5 +1,3 @@
-
-  
   
 -- Get_Line r�knar hur m�nga characters den tar in tills entertecknet, deklarerat en str�ng som �r tio tecken noll, g�r s� att den l�ser fram till ett entertecken och r�knar hur m�nga 
 tecken den har l�st in fr�n bufferten. Om man skriver d� Hem och sen enter s� h�mtar get line str�ngen och r�knar varje tecken i str�ngen och plussar p� ett p� interger. 
@@ -40,8 +38,9 @@ begin
    
    Put("Skriv in ett heltal/flyttal: ");
    Get(H);
+   H:=Integer(F);
    
    Put("Heltalet är: ");
-   Put(H, Width=>0); H:=Integer(F);
+   Put(H, Width=>0); 
    
    Skip_Line; New_Line
