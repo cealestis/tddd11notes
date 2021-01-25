@@ -117,6 +117,19 @@ begin
    
 end Hand0;
 
+   -- lika eller större med: X är =>, lika eller mindre: X är =<.
+   
+   --konvertera en datatyp till en annan, ex. addera en float och en integer för att få ett heltal:
+   Summa, F: Float;
+   I:Integer;
+   
+   Summa := Float(I) + (F);
+   Put(Summa);
+   
+   Integer(F); --kommer avrunda ett flyttal
+   
+   -- markera och klicka på tab så radar det upp sig snyggt
+   
    
    
    
