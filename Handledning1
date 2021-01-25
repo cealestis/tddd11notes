@@ -17,7 +17,7 @@ begin
    for C in 1..I loop
       
       if S(C) = 'C' then
-	 Put("Ordet inneh�ller C");
+	 Put("Ordet innehåller C");
 	 Y := 1;
 	 
 	 exit;
