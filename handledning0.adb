@@ -83,9 +83,40 @@ begin
    Put(F, Fore=>0, Aft=>3, Exp=>0);
    
    Skip_Line; New_Line; -- detta funkar dock inte med att man kan klicka enter osv vid inmatning som står vid körexempel. Hur?
-   --
+  
    
+   --Dugga O0 Lördag! Man ska skriva in ex. 123ABC 0.6 Saab
    
+   with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+
+procedure Hand0 is
+   I,X: Integer;
+   F: Float;
+   S: String(1..10);
+   St: String(1..3);
+   C: Character;
+   
+begin
+   
+   Put("Mata in bilinfo: ");
+   Get(I);
+   Get(St);
+   
+   Get(F);
+   
+   Get(C); --mellanslaget innan bilm�rket
+   
+   Get_Line(S,X);
+   
+   Put(S(1..X));
+   Put(I,2);
+   
+   Put("Bilenförbrukning: ");
+   Put(F,1,1,0);
+   
+end Hand0;
+
    
    
    
