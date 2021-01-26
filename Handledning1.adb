@@ -61,10 +61,9 @@ with Ada.Text_IO, Ada.Integer_Text_IO;
 use Ada.Text_IO, Ada.Integer_Text_IO;
 
 procedure Loop0 is
-  
-   Text: String(1..20); --N tar upp till oändlighet
-   Size: Integer;
-   X: Integer;
+   
+   Text: String(1..20); 
+   Size,X,Y: Integer;
    
 begin
    
@@ -76,10 +75,35 @@ begin
 	 exit;
       else 
 	 Put("Fel! Mata in: ");	 
-	 Get_Line(Text, X);	  
+	 Get_Line(Text, X);
       end if; 
    end loop;
    
+   Put("Mata in ett heltal: ");
+   Get(Size);
+   
+   Y:=0;
+   
+   while Y < Size loop
+      Put_Line(Text(1..3));
+      Y:=Y+1;
+      
+      exit when Y=Size;
+      
+      for I in 1..Y loop
+	 Put(' ');
+      end loop;
+      
+      Y:= Y + 1;
+      Put(Y,0);
+      
+      New_Line;
+      
+    
+   end loop; 
+   
 end Loop0;
+
+
 
 
