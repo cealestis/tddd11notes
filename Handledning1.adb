@@ -26,3 +26,32 @@ begin
       end if;
 	
 end Hand0;
+
+--Loopish 
+
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Loop0 is
+  
+   Text: String(1..N); --N tar upp till oändlighet
+   Size: Integer;
+   X,N: Integer;
+   
+begin
+   
+   Put("Mata in en sträng med max 5 tecken: ");
+   Get_Line(Text, X);
+   
+   if X = 3 then
+      null;
+   else      
+      loop 
+	 Put("Mata in en sträng med max 5 tecken: ");
+	 Get_Line(Text, X);     	 
+	 exit when X = 3;	 
+      end loop;      
+   end if;	       
+   
+end Loop0;
+
