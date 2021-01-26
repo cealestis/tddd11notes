@@ -55,3 +55,31 @@ begin
    
 end Loop0;
 
+--Bäst version av en loop
+
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Loop0 is
+  
+   Text: String(1..20); --N tar upp till oändlighet
+   Size: Integer;
+   X: Integer;
+   
+begin
+   
+   Put("Mata in en sträng med max 5 tecken: ");
+   Get_Line(Text, X);
+   
+   loop
+      if X = 3 then
+	 exit;
+      else 
+	 Put("Fel! Mata in: ");	 
+	 Get_Line(Text, X);	  
+      end if; 
+   end loop;
+   
+end Loop0;
+
+
