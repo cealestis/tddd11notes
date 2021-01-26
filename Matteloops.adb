@@ -23,4 +23,24 @@ begin
    Put("Summan är: ");
    Put(Summa,2);
    
+    --Ger summan av en talföljd som fördubblas baserat på N
+   
+   Put("Skriv in ett tal: ");
+   Get(N);
+   
+   Summa:=0;
+   
+   Put("Talföljden är: ");
+   
+   for I in 1..N loop      
+      Talf:= I*2;
+      Put(Talf,4);      
+      Summa:= Summa + Talf;
+   end loop;
+   
+   New_Line;
+   Put("Summan är: ");
+   Put(Summa,2);
+   
+   
 end Test1;
