@@ -104,6 +104,40 @@ begin
    
 end Loop0;
 
+-- lab01
+
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO;   use Ada.Float_Text_IO;
+
+procedure Loop0 is
+   
+   X: Integer;
+   F: Float;
+   C: Character;
+   Summa: Float;
+   
+begin
+   
+   Put("Mata in N: ");
+   Get(X);
+   
+   Put("Mata in "); Put(X,1); Put(" flyttal: ");
+   
+   for I in 1..N loop      
+      Get(F);
+      Get(C);
+   end loop;
+   
+   
+   
+   --Put(F,0,1,0);
+   
+  -- Summa:= F;
+   --Put(Summa,1,1,0);
+   
+   
+end Loop0;
 
 
 
