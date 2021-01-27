@@ -44,3 +44,30 @@ begin
    
    
 end Test1;
+
+      -- ett inmatat tal ska adderas till ett annat inmatat tal tills de når 100
+
+       Put("Vilka tal bildar serien 84 89 94 99 105?");
+       New_Line;
+       Put("Mata in tv� heltal: ");
+       Get(X);
+       Get(Y);
+       Skip_Line;
+
+       while Z > 100 loop
+          Z:= (X + Y*I);
+       end loop;
+
+       I:=4;  -- fattar ej detta
+
+       Put(X+I*Y);
+       New_Line;
+
+       if
+            Z > 105 then
+          Put("Hurra!");
+       else
+          Put("Inte hurra :(");
+       end if;
+
+
