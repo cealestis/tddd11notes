@@ -3,6 +3,39 @@ use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
 
 procedure Test1 is
    
+   A, B: Integer;
+   Tecken, Mellanslag: Character;
+   
+begin
+   
+   --skriva ut rektangel med heltal A som bas och heltal B som h�jd
+   
+   Put("Skriv in tv� heltal och ett tecken: ");
+   Get(A);
+   --Get(Mellanslag); h�mtar ej in mellanslag och enter f�r integer
+   Get(B);
+   Get(Mellanslag); --mellan character och mellanslag beh�vs
+   Get(Tecken);
+   
+   --Debug//Put(A); Put(B); Put(Tecken);
+   
+   for X in 1..B loop  -- yttre: antal rader, beh�vs New_Line innan ny rad
+      for Y in 1..A loop -- inre: det som ska skrivas ut p� varje rad
+	 Put(Tecken);
+      end loop;
+      New_Line;  --r�tt ordning 
+   end loop;
+     
+end Test1;
+-------
+
+
+
+with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+
+procedure Test1 is
+   
    Star: Character := '*';
    I,J: Integer := 0;
    
