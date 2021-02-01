@@ -1,3 +1,35 @@
+-- simbassäng med inre o yttre loop
+
+With Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Test1 is
+   
+   Int: Integer;
+   Half: Integer;
+   
+begin
+   
+   
+   Put("Mata in ett tal: ");
+   Get(Int);
+   
+   Half:= Int/2;
+   
+   for Y in 1..Half loop --yttre
+      
+      for I in 1..Int loop --inre
+	 Put('-');
+      end loop;
+      
+      New_Line;
+      
+   end loop;
+   
+
+
+
 -- olika loopish som ska visa talföljden till inmatat heltal
 
 With Ada.Text_IO; use Ada.Text_IO;
