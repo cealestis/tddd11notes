@@ -193,5 +193,36 @@ begin
 	    
 end Ruta;
 
------
+----- kul loop där man översätter en sträng för att hitta ett tecken mha for loop
+
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Hand0 is
+   
+   S: String(1..6);
+   X: Integer;
+   
+begin
+   
+   Put("Skriv in en sträng med max 6 ord: ");
+   
+   Get_Line(S,X);
+     
+      for I in 1..X loop
+	 if S(I)='c' then
+	    Put(I);
+	    Put(S(1));
+	    
+	 end if;
+      end loop;
+      
+      
+     -- Get(S (1..));
+     -- Put (S(2..3));
+      
+end Hand0;
+
+----
+
 
