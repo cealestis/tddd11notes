@@ -6,6 +6,45 @@ with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 
 procedure Test1 is
    
+   Tal1, Tal2, Tal3: Integer;
+   
+begin
+   
+   Put("Mata in h�gst tre heltal: ");
+   Get(Tal1);
+   
+   if Tal1 <= 0 then
+      Put("Bl�!");       	 
+   elsif Tal1 > 0 then
+      Get(Tal2);
+      
+      if Tal2 < 0 then
+	 Put("Okej!");
+      else
+	 Get(Tal3);
+	 
+	 if Tal3 < 0 then
+	    Put("Schysst!");
+	 else
+	    Put("Underbart!");
+	 end if;
+	 
+      end if;
+      
+   end if;
+   
+end Test1;
+
+
+
+--loopish
+
+With Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Test1 is
+   
    Tal1,Tal2: Float;
    
 begin
