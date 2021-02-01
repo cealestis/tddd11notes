@@ -1,3 +1,50 @@
+---loopar
+
+With Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Test1 is
+   
+   Tal1,Tal2: Float;
+   
+begin
+   
+   loop
+      Put("Mata in det f�rsta talet: ");
+      Get(Tal1);
+      
+      if Tal1 <= 0.0 then      --0.0 �r 0 som float
+	Put_Line("FEL! M�ste vara st�rre �n noll. ");
+      end if;            
+      
+      exit when Tal1 > 0.0;
+   end loop;
+   
+   loop
+      Put("Mata in det andra talet: ");
+      Get(Tal2);
+      
+      if Tal2 <= Tal1 then
+	Put_Line("FEL! M�ste vara st�rre �n f�rsta talet. ");
+      end if;
+      
+      exit when Tal2 > Tal1;    
+   end loop;
+   
+   Put("Du skrev in talen: ");
+   Put(Tal1,1,2,0);
+   Put(" och ");
+   Put(Tal2,1,2,0);
+   
+end Test1;
+
+
+-------
+
+
+
+
 with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
 use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
 
