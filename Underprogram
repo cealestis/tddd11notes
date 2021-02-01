@@ -1,0 +1,53 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Dagens is
+   
+   A, I:Integer;
+   S: String (1..10);
+  ------------------------------------------------------------------------------------------------------------- 
+   procedure Mata (S : out String; A : out Integer) is
+      
+   begin
+      -- Put ("Mata in sträng S: ");
+      
+      --Get_Line (S,I);
+      
+      --  if I < 2 then  	 	    
+      loop	    
+	 Put ("Mata in sträng S: ");
+	 Get_Line (S,I);	    
+	 exit when I >= 2;
+	 Put("Måste vara mellan 2 och 10 tecken!");
+      end loop;	
+      --   end if;
+     
+      Put ("Mata in heltal N: ");
+      Get (A);
+	 
+   end Mata;
+   --------------------------------------------------------------------------------------------------------
+   procedure Rader (S1 : in String ; A: in Integer) is
+      
+   begin
+      New_Line;
+      Put_Line ("N     S");
+      
+      for D in reverse 1..A loop
+	 Put (D,5);
+	 Put (' ');
+	 for H in 1..D loop
+	    Put (S1(1..I));
+	 end loop;
+	 New_Line;
+      end loop;
+   end Rader;
+   ------------------------------------------------------------------------------------------------------
+      
+begin 
+   
+   Mata (S, A);
+   Rader (S, A);
+   
+end Dagens;
