@@ -1,3 +1,49 @@
+-- olika loopish som ska visa talföljden till inmatat heltal
+
+With Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Test1 is
+   
+   Heltal: Integer;
+   Counter: Integer := 0;
+   
+begin
+   
+   Put("Mata in ett tal: ");
+   Get(Heltal);
+   
+   --while
+   
+   while Counter < Heltal loop      
+      Counter := Counter + 1;
+      Put(Counter,2);
+   end loop;
+   
+   -- loop
+   
+    loop
+      Counter := Counter + 1;
+      Put(Counter,3);
+      exit when Counter = Heltal;
+   end loop;
+   
+   --for (bästa)
+   
+   Put("Mata in ett tal: ");
+   Get(Heltal);
+   
+   for I in 1..Heltal loop
+      Put(I,2);
+   end loop;
+      
+   
+end Test1;
+
+
+
+
 --- for loop och if-sats
 
 With Ada.Text_IO; use Ada.Text_IO;
