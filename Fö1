@@ -100,6 +100,10 @@ ctrl + Y (yank) ta tbx det man tar bort
 ctrl + x + (antal, ex 2) delar man upp emacs i (antal) fönster
 ctrl + x + 1 tar bort alla andra rutor utom den man står i nu. 
 ctrl + c stoppa en loop
+ctrl + x + ex 2,3 för att dela upp skärmen i flera delar för underprogram
+null; gör ingenting, ex för provkomp. för underprogram.
+U: ** betyder att man inte sparat, snabbkommando ctrl x ctrl s
+alt x för linum på linux
 
 Case-satsen: om man har flera sekvenser och val, behövs dock inte i kursen.
 
@@ -136,7 +140,6 @@ då den satsen garanterat kommer gå in och ut i sina satser, men kan lägga til
            end loop;
 
 Get_Line(S,I); sedan krav på stränglängden typ I < 10
-
 
 
 
