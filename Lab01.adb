@@ -1,3 +1,33 @@
+--- for loop och if-sats
+
+With Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Test1 is
+   
+   Heltal: Integer;
+   
+begin
+   
+   Put("Skriv in 10 heltal: ");
+   
+   for I in 1..10 loop
+      Get(Heltal);
+      
+      if Heltal > 5 then
+	 Put(Heltal,1);   
+	 Put(" �r stort!");
+	 New_Line;
+      end if;
+   end loop;
+   
+   
+end Test1;
+
+
+
+
 ---if sats i if sats i ifsats
 
 With Ada.Text_IO; use Ada.Text_IO;
