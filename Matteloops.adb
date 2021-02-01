@@ -47,27 +47,121 @@ end Test1;
 
       -- ett inmatat tal ska adderas till ett annat inmatat tal tills de når 100
 
-       Put("Vilka tal bildar serien 84 89 94 99 105?");
-       New_Line;
-       Put("Mata in tv� heltal: ");
-       Get(X);
-       Get(Y);
-       Skip_Line;
+with Ada.Integer_Text_IO, Ada.Float_Text_IO, Ada.Text_IO;
+use Ada.Integer_Text_IO, Ada.Float_Text_IO, Ada.Text_IO;
 
-       while Z > 100 loop
-          Z:= (X + Y*I);
-       end loop;
+procedure Addhundred is
 
-       I:=4;  -- fattar ej detta
+   X, Y: Integer; 
+   
+begin
+   
+   --mata in två tal 
+   
+   Put("Skriv in två tal: ");
+   Get(X);
+   Get(Y);
+   
+   while X < 100 loop
+      X:= X + Y;
+       Put(X);
+   end loop;
+   
+   if X > 105 then
+      Put("Hurra!");
+   else
+      Put("Inte hurra :(");
+   end if;
 
-       Put(X+I*Y);
-       New_Line;
+   Put(X); 
 
-       if
-            Z > 105 then
-          Put("Hurra!");
-       else
-          Put("Inte hurra :(");
-       end if;
+end Addhundred;
 
+       
+--
+
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure O1 is
+   
+   F : Float ;  -- första talet
+   A : Float ;  -- andra talet
+   D : Float ;  -- dubbla första
+   
+   Fa : Integer; -- första avrundat
+   Aa : Integer; -- andra avrundat
+   I : Integer ; 
+   
+begin 
+   
+   Put ("Mata in första talet: ");
+   Get (F);
+   D := F * 2.0;
+   
+   loop 
+      Put ("Mata in andra talet: ");
+      Get (A);
+      
+      exit when A >= D;
+   end loop;
+   
+   -- skriver ut delen
+   New_Line;
+   
+   Put ("Helatalen mellan ");
+   Fa:= Integer (F);
+   Put (Fa,0);
+   Put (" och ");
+   Aa:= Integer (A);
+   Put (Aa ,0);
+   Put (" är:");
+   New_Line;
+   
+   I:= Aa - Fa;
+   
+   for Counter in Fa..Aa loop  --1..i 
+      Put(Counter, 0);
+      Put(' ');
+   end loop;
+        
+   
+end O1 ;
+
+-----
+
+with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+
+procedure Test1 is
+   
+   X,Y,N: Integer;
+   Summa: Integer:=0;
+   
+begin
+   
+   --Summan av ett inmatat tal som ökar med ett annat tal tills < 100
+   
+   Put("Skriv in två tal: ");
+   Get(X);
+   Get(Y);
+   
+   Summa:= Summa + Y;
+   N:= 0;
+   
+   
+   while N < 100 loop
+      for I in 1..Summa loop
+	 N:= X+Summa*I;
+	 Put(N);
+      end loop;
+      exit when N > 100;
+   end loop;
+   
+      -- ex om X=4, Y=10 så  4 + 10, (4 + 10) + 10, (4 + 10 + 10) + 10...
+      
+   end Test1;
+   
+   ----
 
