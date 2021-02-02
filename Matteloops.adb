@@ -1,3 +1,32 @@
+--MODULO
+
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Test1 is
+   
+   I:Integer;
+      
+begin
+   
+   --modulo
+   
+   Put("Mata in ett tal: ");
+   Get(I);
+   
+   for J in 1..I loop
+      Put(J);
+      if J mod 3 = 0 then  --om J delat med 3 har rest 0 !!!!!!!!
+	 Put("MODULO");     
+      end if;
+   end loop;   
+   
+end Test1;
+
+---------
+
+
 with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
 use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
 
