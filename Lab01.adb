@@ -1,3 +1,40 @@
+--inmatning tills man skrivit 10 tecken som inte är 'e'
+
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Test1 is
+   
+   Counter: Integer := 0;
+   S:String(1..100);
+   I: Integer;
+   Rest: Integer := Counter - I;
+   
+begin
+   
+   --inmatning
+   
+   Put("Skriv in 10 icke-'e'-tecken: ");
+   
+   while Counter < 10 loop
+      Get_Line(S,I); --får in inmatning      	
+
+      if S(I) = 'e' then  --räknar antal e
+	 Counter:= Counter + I;
+      end if;
+      
+      exit when Rest = 10;
+      
+   end loop;   
+   
+   Put("Du skrev ");
+   Put(Counter,1);
+   Put("'e'.");
+   
+end Test1;
+
+
 -- simbassäng med inre o yttre loop
 
 With Ada.Text_IO; use Ada.Text_IO;
