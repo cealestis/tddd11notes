@@ -20,6 +20,11 @@ begin
    while Counter < 10 loop
       Get_Line(S,I); --får in inmatning      	
 
+--  if S(Length) /= 'e' then  --räknar antal icke-e
+	-- Rest:= Rest - Counter;
+      --end if;      
+      
+
       if S(I) = 'e' then  --räknar antal e
 	 Counter:= Counter + I;
       end if;
