@@ -1,3 +1,80 @@
+---Lab01
+
+With Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Lab01 is
+   
+   Size, N: Integer;
+   
+begin
+   
+   Put("Mata in storleken: ");
+   Get(Size);
+   
+   Put("Mata in N: ");
+   Get(N);
+   
+   for I in reverse 1..Size loop        --yttre
+      New_Line; 
+      
+      for J in 1..I loop   --inre
+	 
+	 if (J mod N) = 0 then
+	    Put('!');
+	 else 
+	    Put('#');
+	 end if;
+	 
+      end loop;      
+   end loop;
+   
+   
+end Lab01;
+
+
+
+----Lab00
+
+With Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Lab0 is
+   
+   Albumnamn:String(1..21);
+   Speltid: Float;
+   Utgiv: Integer;
+   I: Integer;
+   
+begin
+   
+   Put("Mata in albumnamn: ");
+   Get_Line(Albumnamn,I);
+   
+   Put("Mata in längd och utgivningsår: ");
+   Get(Speltid);
+   Get(Utgiv);
+   
+   New_Line;
+   
+   Put("Album: ");
+   Put_Line(Albumnamn(1..I));
+   
+   Put("Speltid: ");
+   Put(Speltid,0,2,0);
+   
+   New_Line;
+   
+   Put("År: ");
+   Put(Utgiv,1);
+   
+end Lab0;
+
+------
+
+
 --inmatning tills man skrivit 10 tecken som inte är 'e'
 
 with Ada.Text_IO; use Ada.Text_IO;
