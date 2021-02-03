@@ -88,7 +88,7 @@ procedure Test1 is
 begin
    
    --inmatning tills man skrivit in 10 icke-e, r�knar antal e
-   
+  
    Put("Skriv in 10 icke-'e'-tecken: ");
    
    while Rest < 10 loop
@@ -96,7 +96,6 @@ begin
       
       if C = 'e' then
 	 Counter:= Counter + 1;
-	 Skip_Line;
       else
 	 Rest:= Rest + 1;
       end if;
@@ -106,7 +105,6 @@ begin
    Put("Du skrev ");
    Put(Counter,1);
    Put("'e'.");
-   
    
 end Test1;
 
