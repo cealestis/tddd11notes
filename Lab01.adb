@@ -75,8 +75,6 @@ end Lab0;
 ------
 
 
---inmatning tills man skrivit 10 tecken som inte är 'e'
-
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Float_Text_IO; use Ada.Float_Text_IO;
@@ -84,29 +82,24 @@ with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 procedure Test1 is
    
    Counter: Integer := 0;
-   S:String(1..100);
-   I: Integer;
-   Rest: Integer := Counter - I;
+   C: Character;
+   Rest: Integer := 0;
    
 begin
    
-   --inmatning
+   --inmatning tills man skrivit in 10 icke-e, r�knar antal e
    
    Put("Skriv in 10 icke-'e'-tecken: ");
    
-   while Counter < 10 loop
-      Get_Line(S,I); --får in inmatning      	
-
---  if S(Length) /= 'e' then  --räknar antal icke-e
-	-- Rest:= Rest - Counter;
-      --end if;      
+   while Rest < 10 loop
+      Get(C); --f�r in inmatning      	
       
-
-      if S(I) = 'e' then  --räknar antal e
-	 Counter:= Counter + I;
+      if C = 'e' then
+	 Counter:= Counter + 1;
+	 Skip_Line;
+      else
+	 Rest:= Rest + 1;
       end if;
-      
-      exit when Rest = 10;
       
    end loop;   
    
@@ -114,7 +107,9 @@ begin
    Put(Counter,1);
    Put("'e'.");
    
+   
 end Test1;
+
 
 
 -- simbassäng med inre o yttre loop
