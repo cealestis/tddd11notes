@@ -1,3 +1,43 @@
+---multiplikationstabell och formatering
+
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Test1 is
+   
+   A,B: Integer;
+   MultA, MultB: Integer := 0;
+   
+begin
+   
+   --multiplikationstabell
+   
+   loop
+   
+      Put("Mata in vilka multiplikationstabeller du vill visa: ");
+      Get(A); Get(B);
+      
+      if A = B then
+	 Put_Line("Du kan inte mata in samma tal tv� g�nger!");
+      else exit;
+      end if;
+   end loop;
+   
+   for I in 1..10 loop
+      MultA:= A*I;
+      MultB:= B*I;
+      Put(MultA,2); --width hur stor plats man tar upp, ex 10 tar upp 2
+      
+      
+      Put(MultB,3);
+      
+      New_Line;
+   end loop;
+
+
+
+
 ---Lab01
 
 With Ada.Text_IO; use Ada.Text_IO;
