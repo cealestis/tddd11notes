@@ -1,3 +1,52 @@
+--funkade ej, om man skriver in 24.0 ska den skriva ut 24, och 13.5 utskrift 13.5
+
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Test1 is
+   
+   Name: String(1..10);
+   NL,I: Integer;
+   Age: Float;
+   
+begin
+   
+   --konvertering
+   
+   Put("Mata in en �lder och ett namn: ");
+   Get(Age);
+   Get_Line(Name,NL);
+   
+   if NL = 10 then       --f�r att ta bort entertecken i bufferten
+      Skip_Line;
+   end if;
+   
+   Put("Du matade in namnet: ");
+   Put(Name(1..NL));
+   Put(" och hen �r ");   
+   
+   -- I:= Integer(Age); och skapa en dekl. f�r omvanling men beh�vs ej h�r   
+   
+   --kop till annan vardiabel och avrunda ner�t,sedan minus varandra
+   
+   
+   I:= Integer(Age);
+   Put(Age);
+   
+   if Age mod 2.0 = 0.0 then
+      Put(Age,0,0,0);
+   else
+      Put(Age,0,1,0);
+   end if;
+   
+   Put(" �r gammal. "); 
+   
+end Test1;
+
+
+
+
 ---multiplikationstabell och formatering
 
 with Ada.Text_IO; use Ada.Text_IO;
