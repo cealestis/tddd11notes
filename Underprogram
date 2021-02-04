@@ -4,13 +4,14 @@ with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 
---felhantering, ifall negativt tal kmr in ska det st� Fel positivt,
+--felhantering, ifall negativt tal kmr in ska det st� fel positivt
 --dvs ledtext
+--out betyder att man ger ut info till huvudprogrammet, behövs inte 'in out'. 
 
 procedure Underp is
    
    ------------------------
-   procedure Inmat (Size: in out Integer) is       
+   procedure Inmat (Size: out Integer) is       
       
    begin
       
@@ -118,3 +119,54 @@ begin
    Rader (S, A);
    
 end Dagens;
+
+
+-----------enkel in och utmaning
+
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Underp is
+
+   ----------------------------
+   procedure Inmat (I: out Integer) is
+      
+   begin
+      
+      loop
+	 
+	 Put("Mata in: ");
+	 Get(I);
+	 
+	 if I <= 0 then
+	    Put("M�ste vara positivt! ");
+	    New_Line;
+	 end if;
+	 
+	 exit when I > 0;	 
+      end loop;
+      
+   end Inmat;
+   -----------------------------
+   
+   procedure Utmat (I: in Integer) is
+      
+   begin
+      
+      Put("Du matade in talet: ");
+      Put(I,1);
+      
+   end Utmat;
+   ----------------------
+   
+   I:Integer;
+   
+begin
+   
+   Inmat(I);
+   Utmat(I);
+         
+end Underp;
+
+---------------------
