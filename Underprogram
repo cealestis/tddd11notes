@@ -1,3 +1,47 @@
+---------Från grader till pi------
+
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+with Ada.Numerics; use Ada.Numerics; --f�r pi
+
+procedure Underp is  ---ta in grader ut i radianer
+   
+      
+   Grader: Integer;
+   Radian, GraderF: Float;
+   
+   ----------------------------
+   procedure Convert (Grader: in Integer; Radian: out Float) is    
+      
+   begin      
+      GraderF:= Float(Grader);      
+      Radian:= (GraderF*Pi/180.0);      
+      
+   end Convert;
+   -----------------------------
+   
+begin
+   
+   Put("Mata in ett gradantal: ");   
+   Get(Grader);
+   
+   Convert(Grader,Radian);
+   
+   New_Line;
+   
+   Put(Grader);
+   Put(" grader �r ");   
+   Put(Radian,0,1,0);
+   Put(" radianer. ");
+      
+   
+end Underp;
+
+
+
+
+
 ---------------En rad för utmatning av varje rad triangeln
 
 with Ada.Text_IO; use Ada.Text_IO;
