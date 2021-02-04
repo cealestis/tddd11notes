@@ -1,3 +1,62 @@
+--konvertera strings till integers för att hitta ett hundratal som är större än 725
+
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Underp is
+   
+   S:String(1..3);
+   I: Integer;
+   
+begin
+   
+   Put("Skriv in siffror: ");   
+   
+   for J in 1..6 loop. --loopar så man kan skriva in mac 3 * 6 tecken i strängen dvs 18 tecken
+      Get(S);      
+      I:= Integer'Value(S);  --string till integer
+      exit when I > 725;	
+   end loop;      
+   
+   Put("Talet som hittades var ");
+   Put(I,1);
+
+   
+end Underp;
+
+
+
+
+--mata in flyttal och skriva ut heltalsdel och decimaldel
+
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Underp is
+   
+   F:Float;
+   I,FI:Integer;
+   C:Character;
+   
+begin
+   
+   
+   --Float'Rounding(3.65) = 4 Avrundar
+   --FLoat'Floor(3.65) = 3 Avrundar neråt
+   --Float'Ceil(3.65)=Avrundar uppåt
+   
+   --Decimaldel för minus och sedan gånger hundra och göra båda till integers
+   
+   
+   Put("Skriv in ett flyttal: ");
+       
+      
+      
+   end Underp;
+
+
 --funkade ej, om man skriver in 24.0 ska den skriva ut 24, och 13.5 utskrift 13.5
 
 with Ada.Text_IO; use Ada.Text_IO;
