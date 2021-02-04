@@ -27,32 +27,39 @@ end Underp;
 
 
 
-
 --mata in flyttal och skriva ut heltalsdel och decimaldel
 
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 
+
+
 procedure Underp is
    
-   F:Float;
-   I,FI:Integer;
-   C:Character;
+   F,FH,FD:Float;
+   I,I2:Integer;
    
-begin
-   
+begin   
    
    --Float'Rounding(3.65) = 4 Avrundar
-   --FLoat'Floor(3.65) = 3 Avrundar neråt
-   --Float'Ceil(3.65)=Avrundar uppåt
-   
-   --Decimaldel för minus och sedan gånger hundra och göra båda till integers
-   
+   --FLoat'Floor(3.65) = 3 Avrundar ner�?t
+   --Float'Ceil(3.65)=Avrundar upp�?t   
    
    Put("Skriv in ett flyttal: ");
-       
-      
+   Get(F);
+   
+   Put("Hetalsdel: ");
+   FH:=Float'Floor(F);
+   I:=Integer(FH);
+   Put(I,1);
+   
+   New_Line;
+   
+   Put("Decimaldel: ");
+   FD:= (F - FH)*100.0;
+   I2:=Integer(FD);
+   Put(I2,1);             
       
    end Underp;
 
