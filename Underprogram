@@ -27,8 +27,6 @@ procedure Underp is
 	 
       end loop;
       
-     -- New_Line;
-      
    end Inmat;
 
    ----------------
