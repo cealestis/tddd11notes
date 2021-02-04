@@ -1,0 +1,59 @@
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+
+
+procedure Underp is
+   --underprogram, skicka in info fr�n att bli kallap
+   --parantespar parametrar (A och B), deklaration sen om de ska va in ellr o
+   --hur ska info skickas, in och ut
+   
+   procedure Swap (A,B: in out Integer) is 
+      C:Integer;
+   begin
+      
+      C:=A;  --C fick As v�rde, sparar i C till att anv�ndas till B
+      A:=B;  --A fick Bs v�rde
+      B:=C;  --B vill ha gamla v�rde som vi spara i C s� B = A
+      
+   end Swap;   
+   
+   A,B:Integer;
+   
+begin   
+   
+   --huvudprogram
+   Put("Mata in A: ");
+   Get(A);
+   
+   Put("Mata in B: ");
+   Get(B);
+   
+   New_Line;
+  
+   
+   Put("A:s v�rde innan bytet: ");
+   Put(A);
+   
+   New_Line;
+   
+   Put("B:s v�rde innan bytet: ");
+   Put(B);
+   
+   New_Line;
+   --byte
+   
+   Swap(A,B); --f�rv�ntar sig tv� m�ste skicka in tv�
+   
+   --f�r�ndras av Swap
+   
+   Put("A:s v�rde efter bytet: ");
+   Put(A);
+   
+   New_Line;
+   
+   Put("B:s v�rde efter bytet: ");
+   Put(B);
+   
+end Underp;
