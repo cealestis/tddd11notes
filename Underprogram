@@ -1,3 +1,70 @@
+---------------En rad för utmatning av varje rad triangeln
+
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+--felhantering, ifall negativt tal kmr in ska det st� Fel positivt,
+--dvs ledtext
+
+procedure Underp is
+   
+   ------------------------
+   procedure Inmat (Size: in out Integer) is       
+      
+   begin
+      
+      loop
+	 Put("Mata in storleken p� trappan: ");
+	 Get(Size);
+	 
+	 if Size < 0 then
+	    Put("Storleken m�ste vara positiv. ");
+	 end if;
+	 
+	 exit when Size >= 1;
+      end loop;      
+      
+   end Inmat;      
+   
+   ----------------------
+   procedure Utmat (Size,I: in Integer) is
+      
+   begin
+      
+     -- for I in 1..Size loop
+
+	 for J in 1..I loop
+	    Put('T');
+	 end loop;  
+	 
+	 New_Line;
+	 
+    --  end loop;
+      
+   end Utmat;
+   
+   
+   ----------------------
+   
+   Size: Integer;
+   
+begin   
+   
+   Inmat(Size);
+   --debug Put(Size);
+   
+   for I in 1..Size loop
+      Utmat(Size,I);
+   end loop;
+   
+   
+end Underp;
+
+
+
+------
+
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Float_Text_IO; use Ada.Float_Text_IO;
