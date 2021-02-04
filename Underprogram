@@ -1,3 +1,66 @@
+--Skriv ett underprogram som ökar på en flyttalsvariabel med valbart
+--antal procent av originalvärdet. Underprogrammet ska ta två
+--parametrar: Flyttalsvariabeln vars värde ska ändras och
+--procentsatsen (ett heltal). Underprogrammet ska ÄNDRA på flyttalets
+--värde, inte skriva ut eller returnera detta.
+
+--Man ska kunna kalla på underprogrammet enligt följande huvudprogram:
+
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO;   use Ada.Float_Text_IO;
+
+procedure Underp is
+
+            
+   Value, Percent_F: Float;
+   Percent_Increase: Integer;
+   
+   --Skriv underprogrammet Increase_Value_By_Percent här
+   
+   procedure Increase_Value_By_Percent (Value: in out Float; Percent_Increase: in Integer) is
+      
+   begin      
+                                  --ex man skriver in 10.0 + 50% så ska 10*1.50
+      Percent_F:= Float(Percent_Increase);  --gör om ex. Percent_Increase till float hos Percent_F
+      Percent_F:= (Percent_F/100.0) + 1.0;  --multipliceras till Value
+      
+      Value:= Value*Percent_F;
+      
+   end Increase_Value_By_Percent;
+   
+   ---------------------------------------
+   
+begin
+   Get(Value);  --får in en float
+   Get(Percent_Increase); --får in en integer
+
+   Put("Originalvärdet är: ");
+   Put(Value, Fore => 0, Aft => 3, Exp => 0);
+   New_Line;
+   
+   Increase_Value_By_Percent(Value, Percent_Increase);   --här får man in en float o integer 
+							 -- ska addera procentsatsen (Integer) till flyttalet Value 
+							 -- så man får ut en ny float som fortf är Value
+
+   Put("Värdet efter procentuell ökning (");
+   Put(Percent_Increase, Width => 0);
+   Put("%) är: ");
+   Put(Value, Fore => 0, Aft => 3, Exp => 0);
+   New_Line;
+   
+   Increase_Value_By_Percent(Value, 25);
+
+   Put("Värdet efter ytterligare procentuell ökning (25%) är: ");
+   Put(Value, Fore => 0, Aft => 3, Exp => 0);
+   New_Line;
+   
+end Underp;
+
+
+
+
+
 ---------Från grader till pi------
 
 with Ada.Text_IO; use Ada.Text_IO;
