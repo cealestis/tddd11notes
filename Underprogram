@@ -1,3 +1,69 @@
+---------------------------------------------
+
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO;   use Ada.Float_Text_IO;
+
+procedure Underp is
+   
+   Size: Integer;
+   
+   ---------------
+   
+   procedure Inmat (Size: out Integer) is
+      
+   begin
+      
+      loop
+	 
+	 Put("Mata in storleken: ");
+	 Get(Size);
+	 
+	 if Size < 0 then
+	    Put("Storleken måste vara positiv. ");
+	 end if;   
+	 
+	 exit when Size >= 1;
+	 
+      end loop;
+      
+     -- New_Line;
+      
+   end Inmat;
+
+   ----------------
+   
+   procedure Bron (Size: in Integer) is
+   begin
+      
+      for I in 1..Size loop
+	 Put("|  |");
+	 New_Line;
+      end loop;      
+      
+   end Bron;
+   ------------------------------   
+   
+   
+begin
+   
+   Inmat(Size);
+   
+   Bron(Size/2);
+   Put("===="); 
+   New_Line;
+   Bron(Size);
+   Put("====");
+   New_Line;
+   Bron(Size/2);
+   
+   
+end Underp;
+
+
+
+
+
 ---------------------------Inmat rektangel
 with Ada.Text_IO;         use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
