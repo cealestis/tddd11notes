@@ -1,3 +1,7 @@
+
+
+
+
 --konvertera strings till integers för att hitta ett hundratal som är större än 725
 
 with Ada.Text_IO; use Ada.Text_IO;
