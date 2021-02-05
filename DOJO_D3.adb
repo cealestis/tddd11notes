@@ -43,8 +43,34 @@ procedure Heroes is
      end loop;              
    
  end Get;
- 
+  ---------------------------------------
+  function Compare (T: in Hero_Arr_Type) is --behöver berätta vad den ska returnera
+  return integer is
+  
+  Hero_Amount: Integer:= 0;   --räknaren för hur många hjältar som uppfyller kravet
+  
+  for I in Hero_Arr_Type'Range loop    --för varje hjälte så ska vi kolla om de har mer koppar än silver osv
+            --för varje I vi har kommer vi se platserna dvs records för varje hjälte, om det är så, så kan vi också kolla om det är mer silver än guld
+  if T(I).Gold < T(I).Silver and T(I).Silver < T(I).Copper then
+     Hero_Amount := Hero_Amount + 1;
+  end if;
+ end loop;
+     
+     return Hero_Amount;
+ end Compare;
  ---------------------------------------
       T:= Hero_Arr_Type;   --ska deklareras här, lokal variabel, så att det inte är en global variabel så att man inte råkar göra nå fel med dess värde
+      Antal_Hjaltar: Integer;  --denna kommer från Compare, behövs ej tilldelas
   begin
   Get(T);  --gör en procedure som gettar alla T som är Hero_arr_Type array:en.
+  
+  --andra delen ska jämföra man har mer koppar än silver och mer silver än guld
+  --kan göra antingen function eller procedur för detta, kan ej ha out på functions så man kan inte returnera fler värden
+  --om man ska returnera en string och en float ex går det ej med en funktion. 
+  --vi ska returnera hur många hjältar det är som uppfyller detta krav
+  Compare(T);   --vi returnerar en integer till huvudprogrammet och huvudprogrammet måste fånga upp det,
+                 --behöver ingen variabel som fångar upp då functionen returnerar något som sedan blir hela funktionen
+  
+  
+  
+  end Heroes;
