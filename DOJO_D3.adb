@@ -80,7 +80,7 @@ procedure Heroes is
   --vi ska returnera hur många hjältar det är som uppfyller detta krav
   --Compare(T);   --vi returnerar en integer till huvudprogrammet och huvudprogrammet måste fånga upp det,
                  --behöver ingen variabel som fångar upp då functionen returnerar något som sedan blir hela funktionen
-  Put(Compare(T));
+  Put(Compare(T, Antal_Hjaltar));
   Put(" hjältar har fler kopparmynt än silvermynt och fler silvermynt än guldmynt");
   
   
