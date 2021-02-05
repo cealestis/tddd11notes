@@ -22,6 +22,13 @@ procedure Heroes is
                                        --Men array är istället att man definerar en egen typ av array, på samma sätt som strängar har olika platser med characters har 
                                  --array en längd med data i olika platser. I en array kan man säga att den är 1-10 av integers eller ha det av hero_money_type
                              --så det är som en string med variablar ist för tecken, ex. X= Integer; Y:= Integer := 123; osv i en sån lista.
+                             -- rangen är 1..10 för Hero_Arr_Type, vi har satt alla till i posten till 0, så vi undviker att det blir extra random värden i array:en.
+                             --säg att man skriver in 5 olika och bara vill ha för I till antalet man skrivit in istället för att ha skrivit noll i början. 
+                             --Ifall jag bara matade in en hjälte kommer det alltid bara göra 10 jämförelser, hur kan man ändra antalet jämförelser?
+                             --Då kan man använda sig av Get-proceduren, att i den så kan vi säga istället för exit when villkoret, lägger till en parameter i parameterlistan
+                             --ex ; Length: out Integer), och byter exit when till if T(I).GOld = 0 osv så säger vi att Length:= I;  alltså for loopens varv-räknare så få rvi hur många 
+                             --hjältar vi matat in. Length:= I - 1; då sista är en nollrad.
+                             --Säg att den aldrig går in i villkoret och man matat in 10 hjältar måste vi ha ett defaultvärde om allt uppfylls, så det är bra att tilldela Length:= 10;
 
  ---------------------------------------
  procedure Get(T: out Hero_Arr_Type) is.  --T är lokal variabel i denna procedur också
@@ -62,7 +69,8 @@ procedure Heroes is
  end Compare;
  ---------------------------------------
       T:= Hero_Arr_Type;   --ska deklareras här, lokal variabel, så att det inte är en global variabel så att man inte råkar göra nå fel med dess värde
-      Antal_Hjaltar: Integer;  --denna kommer från Compare, behövs ej tilldelas
+      Antal_Hjaltar: Integer;  --denna kommer från Compare, behövs ej tilldelas. 
+      --Vi kan lägga in denna i Compare och Get istället för att använda Hero_Arr_Range så lägger vi Antal_Hjaltar istället. 
   begin
   Get(T);  --gör en procedure som gettar alla T som är Hero_arr_Type array:en.
   
