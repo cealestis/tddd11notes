@@ -27,14 +27,21 @@ procedure Heroes is
  procedure Get(T: out Hero_Arr_Type) is.  --T är lokal variabel i denna procedur också
  
  begin
+ 
+ Put_Line("Mata in hjältarnas pengar i ordningen guld, silver och koppar");
+ 
  --for-loop 1..10, istället för 10 så kan man skriva räckvidden för Hero_Arr_Type hoppar ut om det är en nolla
  
  for I in Hero_Arr_Type'Range loop -- Attribut!! 'Range !! vilket gör det smidigare för att ändra den i definitionen bara
   Get(T(I).Gold);        --vi vill getta Hero_Money_Type guld och silver och koppar. Med punkt hämtar man från poster men för att nå en plats i arrayen så 
   Get(T(I).Silver);       --ex 10 platser, hämta i en plats där kan man använda sig av parenteser istället, dvs Get(T(1)) ger första platsen i arrayen. 
   Get(T(I).Copper);      -- den första platsen är hela posten dvs guld silver och koppar. 
-     end loop;           --Man behöver även lägga in I:et från for-loopen kan vi komma åt respektiva plats i varje array, vilket är bra om man vill hämta eller skriva ut data från varje plats i arrayen. 
-         
+                      --Man behöver även lägga in I:et från for-loopen kan vi komma åt respektiva plats i varje array, 
+                      --vilket är bra om man vill hämta eller skriva ut data från varje plats i arrayen.
+     
+     exit when T(I).Gold = 0 and T(I).Silver = 0 and T(I).Copper = 0.0;   --måste skriva ut alla grejjer i arrayan
+     end loop;              
+   
  end Get;
  
  ---------------------------------------
