@@ -1,4 +1,4 @@
- with Ada.Integer_Text_IO, Ada.Text_IO; 
+with Ada.Integer_Text_IO, Ada.Text_IO; 
 use Ada.Integer_Text_IO, Ada.Text_IO; 
 
 procedure Envarre is
@@ -12,12 +12,12 @@ procedure Envarre is
       loop
 	 Get(V);
 	 
-	 if V <= 3 or V > 52 then
+	 if V <= 3 or V >= 52 then
 	    Put_Line("Måste vara mellan 3 och 52.");
 	    Put("Skriv in vilken vecka det är: ");
 	 end if;
 	 
-	 exit when V >= 3 and V < 52; 
+	 exit when V >= 3 and V <= 52; 
 	 
       end loop;      
       
@@ -26,7 +26,9 @@ procedure Envarre is
    ----------------------
    
    function Antal_F (V: in Integer) return integer is  --räkna antalet fö/vecka     
-          FV: Integer := 0;  
+      
+      FV: Integer := 0;  
+      
    begin
       
       if V = 3 then
@@ -39,13 +41,13 @@ procedure Envarre is
 	 end loop;      
       end if;
       
-      return FV;
+      return FV;  --resultatet returneras och ersätter själva anropet
+                  -- får endast också anropas i ett uttryck. 
       
    end Antal_F;
 
    ---------------------- 
-   V:Integer;
-   
+   V: Integer;
 begin
    
    Put("Skriv in vilken vecka det är: ");
@@ -58,7 +60,7 @@ begin
 
    New_Line;
    
-   Put("Då bör du vara på föreläsning: ");
+   Put("På den veckan bör du vara på föreläsning: ");
    Put(Antal_F(V),1);   
    
    
