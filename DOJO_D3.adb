@@ -69,10 +69,12 @@ procedure Heroes is
  end Compare;
  ---------------------------------------
       T:= Hero_Arr_Type;   --ska deklareras här, lokal variabel, så att det inte är en global variabel så att man inte råkar göra nå fel med dess värde
-      Antal_Hjaltar: Integer;  --denna kommer från Compare, behövs ej tilldelas. 
-      --Vi kan lägga in denna i Compare och Get istället för att använda Hero_Arr_Range så lägger vi Antal_Hjaltar istället. 
+      Antal_Hjaltar: Integer;  --denna kommer från Compare, behövs ej tilldelas men kan spara Length i denna från out Integer från procedure Get! 
+      
+      --Vi kan lägga in denna i Compare och Get istället för att använda Hero_Arr_Range så lägger vi Antal_Hjaltar istället! då byter vi till att ha en if sats ist.
+      
   begin
-  Get(T);  --gör en procedure som gettar alla T som är Hero_arr_Type array:en.
+  Get(T,Antal_Hjaltar);  --gör en procedure som gettar alla T som är Hero_arr_Type array:en.
   
   --andra delen ska jämföra man har mer koppar än silver och mer silver än guld
   --kan göra antingen function eller procedur för detta, kan ej ha out på functions så man kan inte returnera fler värden
