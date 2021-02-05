@@ -51,7 +51,9 @@ procedure Heroes is
   
   for I in Hero_Arr_Type'Range loop    --för varje hjälte så ska vi kolla om de har mer koppar än silver osv
             --för varje I vi har kommer vi se platserna dvs records för varje hjälte, om det är så, så kan vi också kolla om det är mer silver än guld
-  if T(I).Gold < T(I).Silver and T(I).Silver < T(I).Copper then
+  if T(I).Gold < T(I).Silver and Float(T(I).Silver) < T(I).Copper then    --två olika datatyper, koppar är float. Måste konvertera
+                                           --Göra om silver/integer till float bäst, lägger ba till en nolla
+                                          
      Hero_Amount := Hero_Amount + 1;
   end if;
  end loop;
@@ -68,9 +70,10 @@ procedure Heroes is
   --kan göra antingen function eller procedur för detta, kan ej ha out på functions så man kan inte returnera fler värden
   --om man ska returnera en string och en float ex går det ej med en funktion. 
   --vi ska returnera hur många hjältar det är som uppfyller detta krav
-  Compare(T);   --vi returnerar en integer till huvudprogrammet och huvudprogrammet måste fånga upp det,
+  --Compare(T);   --vi returnerar en integer till huvudprogrammet och huvudprogrammet måste fånga upp det,
                  --behöver ingen variabel som fångar upp då functionen returnerar något som sedan blir hela funktionen
-  
+  Put(Compare(T));
+  Put(" hjältar har fler kopparmynt än silvermynt och fler silvermynt än guldmynt");
   
   
   end Heroes;
