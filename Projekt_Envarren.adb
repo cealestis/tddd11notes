@@ -29,21 +29,13 @@ procedure Envarre is
       
       FV: Integer := 0;  
       
-   begin
-      
-      if V = 3 then
-	 FV:= 2;
-      elsif V = 4 then  --specialfallen då vi ej räknar från 0
-	 FV:= V;
-      else
-	 for Counter in 1..V-4 loop   -- 1..V-4 då nollstället är på vecka 4     
+   begin          
+	 for Counter in -1..V-4 loop   -- när V = 3 är FV = 2, då vecka 3 är start ist för 1.     
 	    FV:= V + Counter; 	 
 	 end loop;      
-      end if;
       
       return FV;  --resultatet returneras och ersätter själva anropet
-                  -- får endast också anropas i ett uttryck. 
-      
+                  -- får endast också anropas i ett uttryck.       
    end Antal_F;
 
    ---------------------- 
