@@ -1,3 +1,58 @@
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Underp is      
+   
+   --------------- funktion som beräknas N! = 1*2..*N
+   
+   function Faculty (Y: in Natural) return Natural is      
+      
+      YF: Natural := 1;
+      
+   begin
+      
+      if Y = 0 then
+	 null;   --detta skippar loopen nedan	 
+      else
+	 for Counter in 1..Y loop
+	    YF:= YF*Counter;
+	 end loop;	 	 	         	 		 
+      end if;  
+      
+      return YF;
+      
+   end Faculty;
+   
+   
+   
+   ---------------------------
+ --  function N_Over_K (N,K; in Natural) return Natural is
+  -- begin
+      
+      
+      
+  -- end N_Over_K;
+   
+  
+   
+   N,K,Tot: Natural;
+   
+begin
+   
+   Put("Mata in N och K: ");
+   Get(N);
+   --Get(K);       
+   
+   Tot:= Faculty(N);
+   
+
+   Put("N över K är: ");
+   
+   Put(Tot,1);
+   
+end Underp;
+
+
 ---------------------------------------------
 
 with Ada.Text_IO;         use Ada.Text_IO;
