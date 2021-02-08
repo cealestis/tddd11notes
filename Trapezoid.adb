@@ -43,7 +43,7 @@ procedure Trapezoid is
       
       
    --Det är inte tillåtet att ändra i detta underprogram på något sätt.
-   function Calculate_And_Print_Trapezoid_Area(B_Large, B_Small, H: in Float; 
+   function Calculate_And_Print_Trapezoid_Area(B_Large, B_Small, H: in Float;    --fel ordning här därför blir det fel
 					       Max_Multiplier     : in Integer) return Float is
       Total_Area: Float;
       Current_Area: Float;
@@ -69,7 +69,7 @@ begin
    
    --Här saknas det som skall finnas i huvudprogrammet.   
    
-   Inmat(B_Small, B_Large);
+   Inmat(B_Small, B_Large);  --dessa ska in i proceduren
    
    Put("Mata in H: ");
    Get(H);  
