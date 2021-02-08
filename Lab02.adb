@@ -41,15 +41,11 @@ procedure Lab02 is
    procedure Delbar (N: in out Integer) is
    begin
       
-      for I in 1..N loop
-	 I1:= I mod 2;
-	 if I1 = 0 then
-	    Put(I/2,3);
-	 else 
-	    null;
+      for I in 1..N loop   --här blev det fel också, ska 
+	 if N mod I = 0 then  --AddeGstring kredd t dig tack, och N mod I är det ju som ska delas jämnt, och I räknar ju upp dem.
+	       Put(I,3);
 	 end if;
-      end loop;
-
+	 end loop;
    end Delbar;
    ------------------------------   
       
