@@ -4,7 +4,7 @@ with Ada.Float_Text_IO;   use Ada.Float_Text_IO;
 
 procedure Lab02 is
    
-   Value,ND,N,D,I1: Integer;
+   Value,ND,N,D: Integer;
    Max: Integer := 0;
    
    --------------------
