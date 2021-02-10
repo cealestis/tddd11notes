@@ -5,7 +5,7 @@ with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 procedure Lab02 is
    
    procedure Inmat (Tal : out Integer; Limit : in Integer) is
-   begin 
+   begin  --felha
      
       loop 
 	 Put("Mata in: ");
@@ -19,26 +19,38 @@ procedure Lab02 is
    end Inmat;
 ----------------------------------------------------------------	       
    procedure Inmat2 (Start, Number : out Integer) is
-      Limit : Integer := 0;
+     -- Limit : Integer := 0;
    begin
       Put_Line ("Inmatning av startvärde");
-      Inmat (Start, Limit);
+      Inmat (Start, 0); --lim = 0
       
-      Limit := 1;
+     -- Limit := 1;
       Put_Line ("Inmatning av antal rader");
-      Inmat (Number, Limit);
+      Inmat (Number, 1); --lim=1
    end Inmat2;
    
    -------------------------------------------------------------
    
    procedure Utskrift (Start , Number : in Integer) is
-      Tal : Integer;
+      ----------------------------
+      
+      procedure Put_C_N_Times (C: in Character; Tal: in Integer) is  --vad behöver jag veta här
+      begin	 
+	 
+	 for K in 1..Tal loop
+	    Put(C);
+	 end loop;
+	 
+	 
+      end Put_C_N_Times;
+      
+      
+      ----------------------------
+      Tal : Integer; 
    begin 
       Tal := Start ;
       for C in 1..Number loop
-	 for K in 1..Tal loop
-	    Put('-');
-	 end loop;
+	 Put_C_N_Times('-',Tal);   --lätt att ändra, följer krav 3 om ett tecken C som skrivs ut N gånger!!
 	 Put (Tal,0);
 	 Tal := Tal + 1;
 	 New_Line;
@@ -56,3 +68,4 @@ begin
    
    
 end Lab02;
+
