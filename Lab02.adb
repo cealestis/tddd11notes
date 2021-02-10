@@ -1,3 +1,75 @@
+
+
+-----------------------------
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Underp is      
+   
+   procedure Inmat (A,K,N: out Integer) is
+   begin
+      
+      Put("Mata in A: ");
+      Get(A);
+      
+      loop
+	 Put("Mata in K: ");
+	 Get(K);	 
+	 if K = 1 then
+	    Put_Line("Får ej vara 1.");
+	 end if;	 
+	 exit when K /= 1;
+      end loop;            
+      
+      loop
+	 Put("Mata in N: ");
+	 Get(N);
+	 if N <= 0 then
+	    Put_Line("Måste vara positiv.");
+	 end if;	 
+	 exit when N >= 1;
+      end loop;      
+      
+   end Inmat;
+   
+   function Func_Exp (Bas, Grad: in Integer) return Integer is
+      Exp: Integer;
+   begin
+      
+      Exp:= Bas**Grad;
+      
+      return Exp;
+      
+   end Func_Exp;   
+   
+   procedure Geo_Sum (A,N,K: in Integer; Kvot: out Integer) is 
+      Taljare, Namnare: Integer;
+   begin
+      
+      Taljare:= A*(Func_Exp(K,N)-1);
+      Namnare:= K-1;
+      
+      Kvot:= Taljare/Namnare;
+           
+   end Geo_Sum;
+      
+   
+   A,K,N: Integer;
+   Kvot: Integer := 0;
+   
+begin
+   
+   Inmat(A,K,N);
+   Geo_Sum(A,N,K,Kvot);
+   New_Line;
+   
+   Put("Den geometriska summan är ");
+   Put(Kvot,1);
+   Put('.');
+   
+end Underp;
+
+-----------------------------
 with Ada.Text_IO;         use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Float_Text_IO;   use Ada.Float_Text_IO;
