@@ -6,6 +6,7 @@ with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 procedure Underp is      
    
+-----------------------------
    procedure Inmat (A,K,N: out Integer) is
    begin
       
@@ -32,6 +33,7 @@ procedure Underp is
       
    end Inmat;
    
+-----------------------------
    function Func_Exp (Bas, Grad: in Integer) return Integer is
       Exp: Integer;
    begin
@@ -42,6 +44,7 @@ procedure Underp is
       
    end Func_Exp;   
    
+-----------------------------
    procedure Geo_Sum (A,N,K: in Integer; Kvot: out Integer) is 
       Taljare, Namnare: Integer;
    begin
@@ -52,7 +55,8 @@ procedure Underp is
       Kvot:= Taljare/Namnare;
            
    end Geo_Sum;
-      
+   
+-----------------------------   
    
    A,K,N: Integer;
    Kvot: Integer := 0;
