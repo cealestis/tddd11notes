@@ -51,7 +51,7 @@ procedure Lab02 is
    begin 
       Tal := Start ;
       for C in 1..Number loop
-	 Put_C_N_Times('-',Tal);   --lätt att ändra
+	 Put_C_N_Times('-',Tal);   --lätt att ändra och stämmer med krav 3!!
 	 --for K in 1..Tal loop
 	   -- Put('-');
 	-- end loop;
