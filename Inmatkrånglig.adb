@@ -46,11 +46,15 @@ procedure Lab02 is
       
       
       ----------------------------
+      
       Tal : Integer; 
    begin 
       Tal := Start ;
       for C in 1..Number loop
-	 Put_C_N_Times('-',Tal);   --lätt att ändra, följer krav 3 om ett tecken C som skrivs ut N gånger!!
+	 Put_C_N_Times('-',Tal);   --lätt att ändra
+	 --for K in 1..Tal loop
+	   -- Put('-');
+	-- end loop;
 	 Put (Tal,0);
 	 Tal := Tal + 1;
 	 New_Line;
@@ -68,4 +72,3 @@ begin
    
    
 end Lab02;
-
