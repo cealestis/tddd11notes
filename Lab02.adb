@@ -1,3 +1,31 @@
+
+---------------------
+
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Lab02 is
+   -----------------------
+   procedure Inmat_Ett_Heltal (Value: out Integer, Min_Value, Max_Value: in Integer ) is
+   begin
+      
+      loop
+      Get(Value);
+      
+      if Value < Min_Value or Value > Max_Value then
+	 Put("Måste vara mellan ");
+	 Put(Min_Value,0);
+	 Put(" och ");
+	 Put(Max_Value,0);
+      
+   end Inmat_Ett_Heltal; 
+   -----------------------
+   
+begin
+   
+end Lab02;
+
+---------------------
 with Ada.Text_IO;         use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
