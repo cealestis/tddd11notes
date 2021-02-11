@@ -1,3 +1,54 @@
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Lab02 is
+   -----------------------   
+   procedure In_Size_Text (Size,SL: out Integer; Text: out String) is
+   begin      
+      
+      Put("Mata in storleken: ");
+      Get(Size);
+      Skip_Line;
+      
+      Put("Mata in en sträng (max 10 tecken): ");
+      Get_Line(Text, SL);       
+      
+   end In_Size_Text;
+   
+   -----------------------
+   procedure Put_C_N_Times (C: in Character; Size: in Integer) is
+   begin	 
+      
+      for J in 1..Size loop
+	 Put(C);	    
+      end loop;
+      
+   end Put_C_N_Times;
+   
+   -----------------------
+   procedure Loop_Rad (C: in Character; Size,Counter: in Integer; Text: in String) is
+   begin
+       
+	 Put_C_N_Times(C,Size);
+	 Put(Text(1..Counter));
+
+   end Loop_Rad;
+   
+   -----------------------
+   C: Character;
+   Size,SL: Integer;
+   Text: String(1..10);      
+begin
+   
+   In_Size_Text(Size,SL,Text);
+   
+   for Counter in reverse 1..SL loop
+      New_Line;
+      Loop_Rad('-',Size,Counter,Text);
+      Size := Size - 1;
+   end loop;  
+   
+end Lab02;
 
 ---------------------
 
