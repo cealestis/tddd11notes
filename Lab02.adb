@@ -1,3 +1,75 @@
+
+----------------------- 
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Lab02 is
+   -----------------------
+   procedure In_Text_Size (Text: out String; Size, Text_Length: out Integer) is
+   begin
+      
+      Put("Mata in en text med maximalt 10 tecken: ");
+      Get_Line(Text, Text_Length);
+      
+      Put("Mata in storlek: ");
+      Get(Size);
+      
+   end In_Text_Size;
+   -----------------------
+   
+   function Control (Size: in Integer) return Boolean is
+   begin
+      
+      if Size > 5 then
+	 return True;	 
+      else
+	 return False;
+      end if;
+      
+   end Control;             
+   -----------------------
+   
+   procedure Loop_Trappa (Text: in String; Size, Text_Length: in Integer) is
+   begin      
+      
+      for Counter in 1..Size loop
+
+	 for I in 1..Counter loop
+	    Put(Text(1..Text_Length));
+	    for J in 1..Text_Length loop
+	       Put(' ');
+	    end loop;
+	 end loop;	 	 
+	 
+	 New_Line;
+	  
+      end loop;
+      
+   end Loop_Trappa;
+   -----------------------   
+   
+   Text: String(1..10);
+   Size, Text_Length: Integer;
+begin
+   
+   In_Text_Size(Text,Size,Text_Length);
+
+   New_Line;
+   
+   Put("En ");
+   if Control(Size) = True then
+      Put("stor ");
+   else
+      Put("liten ");
+   end if;
+   Put_Line("trappa: ");
+   
+   Loop_Trappa(Text, Size, Text_Length);         
+   
+end Lab02;
+
+
+
 -----------------------------
 
 with Ada.Text_IO;         use Ada.Text_IO;
