@@ -1,5 +1,3 @@
-
------------------------ 
 with Ada.Text_IO;         use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
@@ -33,16 +31,19 @@ procedure Lab02 is
    begin      
       
       for Counter in 1..Size loop
-
-	 for I in 1..Counter loop
-	    Put(Text(1..Text_Length));
+	 
+	 Put(Text(1..Text_Length));
+	 
+	 for I in 2..Counter loop    --går i detta fall tydligen att ha reverse range, kredd Mirremirai
 	    for J in 1..Text_Length loop
 	       Put(' ');
 	    end loop;
+	    Put(Text(1..Text_Length));
+	    
 	 end loop;	 	 
 	 
 	 New_Line;
-	  
+	 
       end loop;
       
    end Loop_Trappa;
