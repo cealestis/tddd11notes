@@ -1,3 +1,61 @@
+-----------------------------
+
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Lab02 is
+   
+  procedure Inmat (S: out String; N, SL: out Integer) is
+   begin
+      
+      loop
+	 Put("Mata in en sträng S: ");
+	 Get_Line(S,SL);	 
+	 
+	 if SL < 2 or SL > 10 then
+	    Put("Måste vara mellan 2 och 10 tecken! ");
+	 else
+	    exit;
+	 end if;
+      end loop;
+
+      Put("Mata in heltal N: ");
+      Get(N);      
+      
+   end Inmat;
+   
+   procedure Utskrift_Rad (N: in Integer; S: in String; SL: in Integer) is 
+ 
+   begin
+      
+      Put_Line("N     S");
+      
+      for Counter in 1..N loop
+	 Put(Counter,5);
+	 Put(" ");
+	 
+	 for J in 1..Counter loop
+	    Put(S(1..SL));
+	 end loop;
+	 
+	 New_Line;
+	 
+      end loop;            
+      
+   end Utskrift_Rad;      
+   
+   
+   S: String(1..10);  
+   N: Integer;
+   SL: Integer; 
+begin
+   
+   Inmat(S,N,SL);
+   New_Line;
+   Utskrift_Rad(N,S,SL);
+   
+end Lab02;
+
 
 
 -----------------------------
