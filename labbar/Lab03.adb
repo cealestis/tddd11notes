@@ -1,3 +1,41 @@
+-------------
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Lab03 is
+   
+   type String_Array_Type is
+     array (-10..-1) of String(1..6);       
+   
+   type Month_Array_Type is
+     array (1..12) of Integer;
+   
+   type Bool_Array_Type is
+     array (0..1) of Boolean;
+   
+   St_Var: String_Array_Type;
+   Days_In_Month: Month_Array_Type;
+   Bl_Var: Bool_Array_Type;
+begin
+   
+   Days_In_Month := (31,28,31,30,31,30,30,30,31,31,30,31);
+   
+   Bl_Var(0) := False;
+   Bl_Var(1) := True;
+   if Bl_Var(1) then
+      for I in St_Var'Range loop
+	 St_Var(I) := "Testar";
+      end loop;
+   end if; 
+
+   if Days_In_Month(2) = 28 then
+      St_Var(-1) := "Feb28d";
+   end if;
+   
+end Lab03;
+
+
+
 --------------
 with Ada.Text_IO, Ada.Integer_Text_IO;
 use Ada.Text_IO, Ada.Integer_Text_IO;
