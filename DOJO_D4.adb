@@ -29,12 +29,16 @@ end Test_Reg_Format;
 
 package Reg_Plate_Handling is 
 
-type Reg_Plate_Type is record
+type Reg_Plate_Type is private;
 
-private --gör att man inte behöver känna till namnet, ändra på saker i paketet i huvudprog. ska ej gå
+ --gör att man inte behöver känna till namnet, ändra på saker i paketet i huvudprog. ska ej gå
 --lösning på priate/icke-private problemet är att vi fördeklarerar
 
-type Reg_Plate_Type;
+procedure Get(Item : in Reg_Plate_Type);
+
+private 
+
+type Reg_Plate_Type is record;
 
 --tar tre tecken och ett heltal, så array går ej utan när det är olika typer inuti samma typ 
 --så bör det vara en record type!
