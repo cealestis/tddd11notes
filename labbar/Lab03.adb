@@ -1,3 +1,44 @@
+----------- 2Dfält
+
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Lab03 is
+   
+   type Inner_Arr_Type is
+     array (1..3) of Integer; --ex. 1,2,3
+   
+   type Two_Dim_Type is                 --index:1, 2...
+     array (1..5) of Inner_Arr_Type; --ex. (1 2 3), (4 5 6),...
+   
+   Arr: Two_Dim_Type;
+begin
+   
+   Put("Mata in 5 rader med 3 heltal: ");
+   
+   for Index in Two_Dim_Type'Range loop 
+      --1..5, på Index:1 lagrar den då efter att I lagrat grejjer en hel sträng (1 2 3) från 1..3-loopen 5 gånger
+      
+      for I in Inner_Arr_Type'Range loop
+	 --1..3, på I:1 lagrar den ex. 1, på I:2 lagrar den 2 upp till 3 vilket är loopens range. 
+	 
+	 Get(Arr(Index)(I));  --avser platsen i matrisen, ex. 1,1 och 1,2 osv. 
+      end loop;
+   end loop;
+   
+   New_Line;   
+   Put_Line("I fältet finns nu: ");
+   for Index in 1..5 loop --kan skriva 'Range också såklart
+      for I in 1..3 loop
+	 Put(Arr(Index)(I),3);
+      end loop;
+      New_Line;
+   end loop;           
+   
+end Lab03;
+
+
+
 ------------- SLUMPADE TAL
 with Ada.Numerics.Discrete_Random;
 with Ada.Text_IO; use Ada.Text_IO;
