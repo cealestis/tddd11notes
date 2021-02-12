@@ -1,3 +1,40 @@
+------------- SLUMPADE TAL
+with Ada.Numerics.Discrete_Random;
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Lab03 is
+   
+   subtype Integer_Range is
+     Integer range 1..100;
+
+   package Integer_Range_Package is
+      new Ada.Numerics.Discrete_Random(Result_Subtype => Integer_Range);
+   
+   type Slump_Arr_Type is
+     array (1..23) of Integer;
+   
+   G: Integer_Range_Package.Generator; 
+   I: Integer;
+   Slump_Arr: Slump_Arr_Type;
+
+begin
+   Integer_Range_Package.Reset(G);
+   
+   for Index in Slump_Arr_Type'Range loop
+      Slump_Arr(Index):= Integer_Range_Package.Random(G);
+   end loop;      
+
+   Put_Line("Slumpade tal: ");
+   
+   for J in Slump_Arr_Type'Range loop
+      I := Integer_Range_Package.Random(G);
+      Put(I, Width => 0);
+      New_Line;
+   end loop;
+   
+end Lab03;
+
 -------------
 with Ada.Text_IO, Ada.Integer_Text_IO;
 use Ada.Text_IO, Ada.Integer_Text_IO;
