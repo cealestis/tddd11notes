@@ -1,3 +1,32 @@
+-------------------
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Lab03 is
+   
+   type Int_Arr_Type is
+     array (1..5) of Integer;
+   
+   Int_Arr: Int_Arr_Type;
+begin      
+   
+   Put("Mata in 5 tal: ");
+   
+   for Index in reverse Int_Arr_Type'Range loop
+      Get(Int_Arr(Index));
+   end loop;
+   
+   New_Line;
+   
+   Put("I fältet finns nu:");
+   
+   for Index in Int_Arr_Type'Range loop
+      Put(Int_Arr(Index),2);
+   end loop;
+      
+end Lab03;
+
+
 --------------------
 with Ada.Text_IO, Ada.Integer_Text_IO;
 use Ada.Text_IO, Ada.Integer_Text_IO;
