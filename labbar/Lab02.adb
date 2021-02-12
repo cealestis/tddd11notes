@@ -1,4 +1,138 @@
+--finaste koden jag gjort, i love myself
+
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Lab02 is
+   -----------------------   
+   procedure Get_Size_Text(Size: out Integer; Text: out String) is
+   begin      
+      
+      Put("Mata in storleken: ");
+      Get(Size);
+      Skip_Line; --för att ta bort entertecken i buffert
+      
+      Put("Mata in en sträng (max 10 tecken): ");
+      Get_Line(Text, Size);  
+      
+   end Get_Size_Text;
+   -----------------------
+   procedure Put_N_C (N: in Integer; C: in Character) is
+   begin
+      for Counter in 1..N loop
+	 Put(C);
+      end loop; 
+   end Put_N_C;
+   ------------------------
+   procedure Print_Row (N: in Integer; C: in Character; Text: in String) is
+   begin
+      
+      Put_N_C(N, C);
+      Put(Text(1..N)); --kommer skriva ut hela string
+      
+   end Print_Row;
+   ----------------------
+   procedure Print_Figure (Size: in Integer; C:in Character; Text: in String) is
+      
+      Minskning: Integer;
+      
+   begin
+      for Counter in 1..Size loop
+	 Minskning:= Size - Counter + 1;  --+ 1 för att komplettera för första raden
+	 Print_Row(Minskning, C, Text);
+	 New_Line;
+      end loop;            
+   end Print_Figure;   
+   ------------------------
+   Size: Integer;
+   Text: String(1..10);
+begin
+   
+   Get_Size_Text(Size,Text);
+   New_Line;
+   Print_Figure(Size, '-',Text);
+   
+end Lab02;
+
 -----------------------------
+
+with Ada.Text_IO;         use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+
+procedure Lab02 is
+   
+   procedure Inmat (Tal : out Integer; Limit : in Integer) is
+   begin  --felha
+     
+      loop 
+	 Put("Mata in: ");
+	 Get (Tal);
+	 exit when Tal >= Limit;
+	 Put ("Måste vara minst ");
+	 Put (Limit,0);
+	 New_Line;
+      end loop;
+      
+   end Inmat;
+----------------------------------------------------------------	       
+   procedure Inmat2 (Start, Number : out Integer) is
+     -- Limit : Integer := 0;
+   begin
+      Put_Line ("Inmatning av startvärde");
+      Inmat (Start, 0); --lim = 0
+      
+     -- Limit := 1;
+      Put_Line ("Inmatning av antal rader");
+      Inmat (Number, 1); --lim=1
+   end Inmat2;
+   
+   -------------------------------------------------------------
+   
+   procedure Utskrift (Start , Number : in Integer) is
+      ----------------------------
+      
+      procedure Put_C_N_Times (C: in Character; Tal: in Integer) is  --vad behöver jag veta här
+      begin	 
+	 
+	 for K in 1..Tal loop
+	    Put(C);
+	 end loop;
+	 
+	 
+      end Put_C_N_Times;
+      
+      
+      ----------------------------
+      
+      Tal : Integer; 
+   begin 
+      Tal := Start ;
+      for C in 1..Number loop
+	 Put_C_N_Times('-',Tal);   --lätt att ändra och stämmer med krav 3!!
+	 --for K in 1..Tal loop
+	   -- Put('-');
+	-- end loop;
+	 Put (Tal,0);
+	 Tal := Tal + 1;
+	 New_Line;
+      end loop;
+   end Utskrift;   
+   
+   I , J : Integer;   
+   
+begin
+   
+   Inmat2 (I,J);
+   New_Line; 
+   Utskrift (I,J);
+  
+   
+   
+end Lab02;
+
+-----------------------------
+
 with Ada.Text_IO;         use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
