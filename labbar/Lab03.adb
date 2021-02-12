@@ -1,3 +1,51 @@
+--------------
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Lab03 is
+   
+   type Int_Arr_Type is
+     array (1..5) of Integer;
+   
+   Int_Arr: Int_Arr_Type;
+begin      
+   
+   Put("Mata in 5 tal: ");
+   
+   for Index in Int_Arr_Type'Range loop
+      Get(Int_Arr(Index));
+      
+      if Index = Int_Arr'First then
+	 New_Line;
+	 Put("Du matade in fältet:");
+      end if;      
+      
+      Put(Int_Arr(Index),3);
+      
+   end loop;
+   
+   New_Line;
+   
+   Put("Den första siffran i fältet är:");
+   Put(Int_Arr(1),3);  
+   
+   New_Line;
+   
+   Put("Den ligger på index:");
+   Put(1,2);
+   
+   New_Line;
+   
+   Put("Den sista siffran i fältet är:");
+   Put(Int_Arr(5),3);
+   
+   New_Line;
+   Put("Den ligger på index:");
+   Put(5,2);
+      
+end Lab03;
+
+
 -------------------
 with Ada.Text_IO, Ada.Integer_Text_IO;
 use Ada.Text_IO, Ada.Integer_Text_IO;
