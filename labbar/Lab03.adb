@@ -1,3 +1,31 @@
+----------
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Lab03 is
+   
+   type Two_Dim_Type is
+     array (1..5) of String(1..2);
+   
+   Two_Dim: Two_Dim_Type;
+begin
+   
+   Put("Mata in 10 tecken: ");
+   for Index in Two_Dim_Type'Range loop
+      Get(Two_Dim(Index));
+   end loop;
+             
+   New_Line;
+   Put("Bram fältet innehåller din mamma: ");
+   
+   for Index in Two_Dim_Type'Range loop     
+      Put(Two_Dim(Index));
+       Put(' ');
+   end loop;
+   
+end Lab03;
+
+
 ----------- 2Dfält
 
 with Ada.Text_IO; use Ada.Text_IO;
