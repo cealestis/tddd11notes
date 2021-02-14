@@ -1,4 +1,44 @@
 ----------
+with Ada.Text_IO;			use Ada.Text_IO;
+with Ada.Integer_Text_IO;		use Ada.Integer_Text_IO;
+
+procedure Lab03 is  
+   type Inner_Array is 
+     array (1..4) of String(1..7);
+   
+   type Array_A is 
+     array (-6..1) of Inner_Array; --8x4 matris
+   
+   P: Array_A;
+   C: Character;
+begin
+   
+   Put_Line("Mata in data: ");
+   
+   for X in Array_A'Range loop
+      for Y in Inner_Array'Range loop
+	 Get(P(X)(Y));
+	 if Y < Inner_Array'Last then
+	    Get(C);
+	 end if;
+      end loop;
+   end loop;
+   
+   New_Line;
+   Put_Line("Följande data finns i fältet:");
+   
+   for X in Array_A'Range loop
+      for Y in Inner_Array'Range loop 	 
+	 Put(P(X)(Y));
+	 Put(C);
+      end loop;
+      New_Line;
+   end loop;
+   
+end Lab03;
+
+
+----------
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
