@@ -3,6 +3,40 @@ with Ada.Text_IO;			use Ada.Text_IO;
 with Ada.Integer_Text_IO;		use Ada.Integer_Text_IO;
 
 procedure Lab03 is  
+   
+   type Inner_Array is
+     array (-2..0) of Character;
+   
+   type M_Array is 
+     array (3..7) of Inner_Array;
+   
+   M: M_Array;
+begin
+   
+   Put_Line("Mata in data: ");
+   for X in M_Array'Range loop
+      for Y in Inner_Array'Range loop
+	 Get(M(X)(Y));
+      end loop;
+   end loop;
+   
+   New_Line;
+   
+   Put_Line("Följande data finns i fältet:");
+   for X in M_Array'Range loop
+      for Y in Inner_Array'Range loop
+	 Put(M(X)(Y));
+      end loop;
+      New_Line;
+   end loop;  
+   
+end Lab03;
+
+----------
+with Ada.Text_IO;			use Ada.Text_IO;
+with Ada.Integer_Text_IO;		use Ada.Integer_Text_IO;
+
+procedure Lab03 is  
    type Inner_Array is 
      array (1..4) of String(1..7);
    
