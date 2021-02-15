@@ -2,34 +2,32 @@
 with Ada.Text_IO;			use Ada.Text_IO;
 with Ada.Integer_Text_IO;		use Ada.Integer_Text_IO;
 
-procedure Lab03 is  
-   
-   type Inner_Array is
-     array (-2..0) of Character;
-   
-   type M_Array is 
-     array (3..7) of Inner_Array;
-   
-   M: M_Array;
+  -----------------------------------------------------------------------------
+  type Matrix_Type is
+    array (-2 .. 0, 3 .. 7) of Character;
+  
+  -----------------------------------------------------------------------------
+  M : Matrix_Type;
+  
 begin
-   
-   Put_Line("Mata in data: ");
-   for X in M_Array'Range loop
-      for Y in Inner_Array'Range loop
-	 Get(M(X)(Y));
-      end loop;
-   end loop;
-   
-   New_Line;
-   
-   Put_Line("Följande data finns i fältet:");
-   for X in M_Array'Range loop
-      for Y in Inner_Array'Range loop
-	 Put(M(X)(Y));
-      end loop;
-      New_Line;
-   end loop;  
-   
+  Put_Line("Mata in data: ");
+  for Y in Matrix_Type'Range(2) loop   --syftar på 3..7:an
+    for X in Matrix_Type'Range(1) loop  ---2..0 an
+      Get(M(X)(Y));
+    end loop;
+    Skip_Line;  
+  end loop;
+  
+  
+  Put_Line("Följande data finns i fältet: ");
+  for Y in Matrix_Type'Range(2) loop
+    for X in Matrix_Type'Range(1) loop
+      Put(M(X)(Y));
+      Put(' ');  -- Här skrivs ett blanktecken efter raden ut också
+    end loop;
+    New_Line;
+  end loop;
+  
 end Lab03;
 
 ----------
