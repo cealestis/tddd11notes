@@ -1,6 +1,78 @@
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
-with Ada.Float_Text_IO; use Ada.Float_Text_IO;
+
+procedure Lab03 is   
+   -------------------------------
+   type Ch_Ascii_Type is
+      record
+	 Ch: Character;
+	 Value: Integer;
+      end record;
+   
+   -------------------------------
+   type Data_Array is
+      array(2..6) of Ch_Ascii_Type;
+   
+   -------------------------------
+   type Register_Type is
+      record
+	 N: Integer;
+	 Data: Data_Array;
+      end record;
+   
+   -------------------------------
+   procedure Inmat (Item: out Register_Type) is
+      Ch: Character;
+      Value: Integer;
+   begin
+      
+      Put_Line("Mata in ett antal tecken och dess ASCII-kod (avsluta med tecknet '<'):");
+      
+      --först getta character 
+      for Index in Item.Data'Range loop     --Register_Type = Item och sen inuti Data_Array
+	 Get(Ch); --får en Character
+	 exit when Ch = '<';
+	 	 
+	 Get(Value); --får ASCII-koden	 
+	 Skip_Line;
+	 
+	 Item.N:= Index; --sparar
+	 Item.Data(Index):= (Ch,Value); --sparar dem på rätt Index
+      end loop;
+      
+   end Inmat;   
+   -------------------------------
+   procedure Utmat (Item: in Register_Type) is
+   begin
+      
+      Put_Line("Datastrukturen innehåller följande data:");
+      
+      for Index in Item.Data'First..Item.N loop --till N då hela arrayen ej fylls ut
+	 Put("Index ");
+	 Put(Index,1);
+	 Put(": '");
+	 Put(Item.Data(Index).Ch);
+	 Put("'");
+	 Put(Item.Data(Index).Value,4);
+	 New_Line;
+      end loop;
+      
+   end Utmat;
+   
+   -------------------------------
+   
+   R: Register_Type;
+begin
+   
+   Inmat(R);
+   Utmat(R);
+     
+end Lab03;
+
+
+----------------------------------------
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 procedure Lab032 is         
    -----------------------------------------------------------------------------
