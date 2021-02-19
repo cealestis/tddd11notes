@@ -1,3 +1,28 @@
+type Data_Type is 
+      record
+	 Int: Integer;
+      end record;   
+   -------------------------------
+   type Big_Data is 
+     array (-3..10) of Data_Type;
+   
+   -------------------------------   
+   procedure Inmat (Item: out Big_Data) is
+      
+   begin
+      
+      Put_Line("Mata in några heltal, skriv sen STOP: ");
+      for Index in reverse Big_Data'Range loop
+	 ..Get(Item(Index).Int);
+	 --Skip_Line;	 	
+      end loop;
+      
+   end Inmat;
+   -----------------------------
+   Big: Big_Data;
+
+--------
+
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
