@@ -67,7 +67,7 @@ procedure P2 is
       New_Line;
       
       for Mellanslag in Min..Max-2 loop
-	 for Tio in 1..9 loop
+	 for Tio in 1..10 loop
 	    Put(' ');
 	 end loop;
       end loop;
@@ -76,7 +76,7 @@ procedure P2 is
       Value_Mellan:= Integer(Value_F*10.0); --bufferten ex. 0.3 * 10 = 3.0 sen till integer
       
       Put("    ");
-      for Decimellan in Min..Value_Mellan loop
+      for Decimellan in 1..Value_Mellan-1 loop
 	 Put(' ');
       end loop;
       
