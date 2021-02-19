@@ -4,8 +4,7 @@ with Ada.Float_Text_IO;   use Ada.Float_Text_IO;
 
 procedure P2 is
    ------------------------
-   procedure Get_Min_Max_Value (Value: out Float; Min, Max: out Integer) is
-      Int_Value: Integer;
+   procedure Get_Min_Max_Value (Value_Int: out Integer; Value_F: out Float; Min, Max: out Integer) is
    begin
       
       Put("Mata in X: ");
@@ -18,11 +17,11 @@ procedure P2 is
             
       loop	 
 	 Put("Mata in Z: ");
-	 Get(Value);
+	 Get(Value_Int);      --get I ex 3.4 och då är 0.4 i bufferten 
+	                  --så då kan man getta F som då blir 0.4 
+	 Get(Value_F);
 	 
-	 Int_Value:= Integer(Value);
-	 
-	 exit when Int_Value > Min and Int_Value < Max;
+	 exit when Value_Int > Min and Value_Int < Max;
 	 Put("Fel! Måste vara som minst ");
 	 Put(Min,0);
 	 Put(" och som mest ");
@@ -38,11 +37,13 @@ procedure P2 is
       
       Put(Min,4);
       
-      for Spaces in Min..(Max - Min - 1) loop	 
-	 Put("          "); --10 mellanslag
+      for Spaces in Min..(Max-2) loop -- (-2) för den räknar med första range
+	 for Mellanslag in 1..10 loop 
+	    Put(' ');  --10 mellanslag vet ej hur man ska göra
+	    end loop;
       end loop;
-
-      Put(Max,10);
+      
+      Put(Max,10); --för att fixa sista index
       New_Line;
    end Index;
    
@@ -59,28 +60,38 @@ procedure P2 is
    end En_Tallinje;      
    
    ------------------------
-   procedure Pil (Min: in Integer; Value: in Float) is
-      Floor_Value: Float;
-      Int_Value: Integer;
+   procedure Pil (Min,Max: in Integer; Value_Int: in Integer; Value_F: in Float) is
+      Value_Mellan: Integer;
    begin
+      
       New_Line;
       
-      Floor_Value:= Float'Floor(Value);
-      Int_Value:= Integer(Value);
-      for Counter in Min..Int_Value loop
-	 Put("         ");
-      end loop;      
+      for Mellanslag in Min..Max-2 loop
+	 for Tio in 1..9 loop
+	    Put(' ');
+	 end loop;
+      end loop;
+      
+      --decimalmellanslagen
+      Value_Mellan:= Integer(Value_F*10.0); --bufferten ex. 0.3 * 10 = 3.0 sen till integer
+      
+      Put("    ");
+      for Decimellan in Min..Value_Mellan loop
+	 Put(' ');
+      end loop;
+      
       Put('^');
+      
    end Pil;        
    ------------------------
         
-   Value: Float;
-   Min, Max: Integer;
+   Value_F: Float;
+   Value_Int, Min, Max: Integer;
 begin   
    
-   Get_Min_Max_Value(Value, Min, Max);
-   Index(Min,Max);
-   En_Tallinje(Min,Max); 
-   Pil(Min,Value);
+   Get_Min_Max_Value(Value_Int, Value_F, Min, Max);
+   Index(Min, Max);
+   En_Tallinje(Min, Max); 
+   Pil(Min, Max, Value_Int, Value_F);
    
 end P2;
