@@ -17,8 +17,8 @@ procedure P2 is
             
       loop	 
 	 Put("Mata in Z: ");
-	 Get(Value_Int);      --get I ex 3.4 och då är 0.4 i bufferten 
-	                  --så då kan man getta F som då blir 0.4 
+	 Get(Value_Int);      --get I ex 3.44 och då är 0.44 i bufferten 
+	                  --så då kan man getta F som då blir 0.44 
 	 Get(Value_F);
 	 
 	 exit when Value_Int > Min and Value_Int < Max;
@@ -62,6 +62,7 @@ procedure P2 is
    ------------------------
    procedure Pil (Min,Max: in Integer; Value_Int: in Integer; Value_F: in Float) is
       Value_Mellan: Integer;
+      Value_Floor, Value_Tio: Float;
    begin
       
       New_Line;
@@ -73,10 +74,12 @@ procedure P2 is
       end loop;
       
       --decimalmellanslagen
-      Value_Mellan:= Integer(Value_F*10.0); --bufferten ex. 0.3 * 10 = 3.0 sen till integer
+      Value_Tio:= Value_F*10.0; -- 0.39 -> 3.90
+      Value_Floor:= Float'Floor(Value_Tio);
+      Value_Mellan:= Integer(Value_Floor); --bufferten ex. 0.39 * 10 = 3.9 men ska bli 3
       
       Put("    ");
-      for Decimellan in 1..Value_Mellan-1 loop
+      for Decimellan in 1..Value_Mellan-1 loop -- -1 för sista
 	 Put(' ');
       end loop;
       
