@@ -1,3 +1,57 @@
+with Ada.Text_IO, Ada.Integer_Text_IO; 
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Test is
+   
+   procedure Inmat (Number_Of_Names: out Integer) is      
+   begin      
+      loop	 
+	 Put("Mata in antal namn: ");
+	 Get(Number_Of_Names);
+	 Skip_Line;
+	 exit when Number_Of_Names > 0;
+	 Put("Måste vara större än 0.");
+      end loop;      
+   end Inmat;
+   
+   procedure Get_Put_Name (Int: in Integer; C: out Character) is
+   begin     
+      for Counter in 1..Int loop
+	 Get(C);
+	 Put(C);
+	 Put("  ");
+      end loop;
+      New_Line;
+   end Get_Put_Name;   
+   
+   function Output (Number_Of_Names: in Integer) return Integer is
+      Int: Integer;
+      Sum: Integer:= 0;
+      C: Character;
+   begin      
+      Put("Mata in namnen: ");  
+      
+      for Index in 1..Number_Of_Names loop
+	 Get(Int);
+	 Get_Put_Name(Int, C);		 
+	 Sum:= Sum + Int;
+      end loop;      
+      return Sum;      
+   end Output;
+   
+   Sum,N: Integer;
+begin
+   Inmat(N);  
+   
+   Sum:= Output(N); --genomför hela funktionen när man tilldelar såhär
+   
+   New_Line;
+   Put("Namnens totala längd: ");   
+   Put(Sum,1);
+end Test;
+
+
+
 --finaste koden jag gjort, i love myself
 
 with Ada.Text_IO;         use Ada.Text_IO;
