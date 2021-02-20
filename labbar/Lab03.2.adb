@@ -1,3 +1,71 @@
+------O3.3
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure Lab03 is   
+   -------------------------------
+   type As_Array is
+     array (2..6) of Integer;
+   
+   -------------------------------
+   type Ch_Array is
+     array (2..6) of Character;
+   
+   -------------------------------
+   type Register_Type is
+      record
+	 N: Integer;
+	 Ch: Ch_Array;
+	 Ascii: As_Array;
+      end record;
+   -------------------------------
+   procedure Inmat (Item: out Register_Type) is
+      Ch: Character;
+      Value: Integer;
+   begin
+      
+      Put_Line("Mata in ett antal tecken och dess ASCII-kod (avsluta med tecknet '<'):");
+      
+      for Index in reverse 2..6 loop 
+	 Get(Ch); 
+	 exit when Ch = '<';
+	 
+	 Get(Value);	 
+	 Skip_Line;
+	 
+	 Item.N:= Index;
+	 Item.Ch(Index):= Ch;
+	 Item.Ascii(Index):= Value;
+      end loop;
+      
+   end Inmat;   
+   -------------------------------
+   procedure Utmat (Item: in Register_Type) is
+   begin
+      
+      Put_Line("Datastrukturen innehåller följande data:");
+      
+      for Index in reverse Item.N..6 loop
+	 Put("Index ");
+	 Put(Index,1);
+	 Put(": '");
+	 Put(Item.Ch(Index));
+	 Put("'");
+	 Put(Item.Ascii(Index),4);
+	 New_Line;
+      end loop;
+      
+   end Utmat;
+   -------------------------------
+   R: Register_Type;
+begin
+   
+   Inmat(R);
+   Utmat(R);
+   
+end Lab03;
+
+---------------------------------
 type Data_Type is 
       record
 	 Int: Integer;
