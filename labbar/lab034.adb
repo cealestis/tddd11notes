@@ -32,4 +32,4 @@ begin
    end if;   
    Put (" ok!");      
    
-end Lab034;
+end Lab034; --  Argument_Count : integer, attribut för index för antal argument, varje argument är som strängar
