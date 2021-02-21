@@ -25,9 +25,7 @@ begin
    end if;
    
    Put ("Det var");   
-   if B then 
-      null;
-   else
+   if not B then      
       Put (" inte");
    end if;   
    Put (" ok!");      
