@@ -1,3 +1,61 @@
+--------------------------------
+with Ada.Text_IO;  use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Float_Text_IO;   use Ada.Float_Text_IO;
+
+procedure P2 is
+   
+   procedure Inmat (I: out Integer; F: out Float) is 
+   begin
+      Put("Mata in ett heltal: ");      
+      Get(I);      
+      loop
+	 Put("Mata in ett flyttal (ej 0.0): ");
+	 Get(F);
+	 exit when F /= 0.0;
+	 Put_Line("Får ej vara 0.0.");
+      end loop;      
+   end Inmat;
+   
+   function Average (I: in Integer; F: in Float) return Float is      
+      I_Float: Float;
+      Avrg: Float;
+   begin
+      I_Float:= Float(I);      
+      Avrg:= (I_Float+F)/2.0;      
+      return Avrg;      
+   end Average;
+   
+   function Formula (I: in Integer; F: in Float) return Float is
+      Div: Float;
+      I_Float: Float;
+   begin  
+      I_Float:= Float(I);
+      Div:= ((Average(I,F)*I_Float)/F);
+      Div:= Float'Floor(Div);
+      return Div;            
+   end Formula;
+   
+   procedure Utmat (I: in Integer; F: in Float) is
+   begin
+      New_Line;
+      --Formula(I,F);
+      Put("F = ");
+      Put(F,0,2,0);
+      Put(" och I = ");
+      Put(I,0);
+      Put(" gav resultatet ");
+      Put(Formula(I,F), 0,2,0);
+   end Utmat;
+   
+   I: Integer;
+   F: Float;
+begin      
+   Inmat(I,F);
+   Utmat(I,F);      
+end P2;
+-----------------------
+
 with Ada.Text_IO, Ada.Integer_Text_IO; 
 use Ada.Text_IO, Ada.Integer_Text_IO;
 
