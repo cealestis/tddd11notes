@@ -1,3 +1,83 @@
+----------------
+
+with Ada.Text_IO;  use Ada.Text_IO;
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+
+procedure P2 is
+   
+   procedure Inmat (Titel,Text: out String; Titel_Length, Text_Length: out Integer) is     
+   begin
+      Put("Mata in figurens titel: ");
+      Get_Line(Titel,Titel_Length);
+      if Titel_Length = Titel'Length then
+	 Skip_Line;
+      end if;
+      
+      Put("Mata in figurens text: ");
+      Get_Line(Text, Text_Length);
+      if Text_Length = Text'Length then
+	 Skip_Line;
+      end if;
+   end Inmat;
+   
+   function Return_Big (Int_1, Int_2: in Integer) return Integer is
+   begin
+      
+      if Int_1 > Int_2 then	 
+	 return Int_1;
+      else
+	 return Int_2;
+      end if;      
+      
+   end Return_Big;
+   
+   procedure Put_C (Start_End, Middle: in Character; Length: in Integer) is
+   begin
+      
+      Put(Start_End);
+      for Counter in 1..Length loop	 
+	 Put(Middle);
+      end loop; 
+      Put(Start_End);
+      New_Line;
+      
+   end Put_C;
+   
+   procedure Put_Text_Row (Text: in String; Text_Length, Max_Length: in Integer) is
+   begin
+            
+      Put('|');
+      Put(Text(1..Text_Length));      
+      for I in Text_Length..(Max_Length-1) loop --VIKTIGT
+	 Put(' ');
+      end loop;      
+      Put('|');
+      New_Line;
+      
+   end Put_Text_Row;       
+   
+   procedure Whole_Figure (Titel,Text: in String; Titel_Length, Text_Length: in Integer) is
+      Max_Length: Integer;
+   begin
+      Max_Length:= Return_Big(Titel_Length, Text_Length);
+      
+      Put_C('+','-', Max_Length);
+      Put_Text_Row(Titel, Titel_Length, Max_Length);
+      Put_Text_Row(Text, Text_Length, Max_Length);
+      Put_C('+','-', Max_Length);
+      
+   end Whole_Figure;   
+   
+   Titel,Text: String(1..20);
+   Titel_Length, Text_Length: Integer;
+begin      
+   
+   Inmat(Titel, Text, Titel_Length, Text_Length);
+   Whole_Figure(Titel, Text, Titel_Length, Text_Length);
+   
+end P2;
+
+
 --------------------------------
 with Ada.Text_IO;  use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
