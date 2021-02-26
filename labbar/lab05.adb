@@ -1,3 +1,33 @@
+-----------
+with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO; 
+use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+
+procedure Lab05 is
+   
+   function Collatz (N: in Natural) return Natural is
+   begin            
+       
+      if N = 1 then
+	 return N;
+      elsif N mod 2 = 0 then
+	 Put(Natural'Image(N) & " -> ");
+	 return Collatz(N/2);
+      else
+	 Put(Natural'Image(N) & " -> ");
+	 return Collatz(N*3 + 1);	 
+      end if;            
+      
+   end Collatz;
+   N:Natural;
+begin
+   
+   Get(N);
+   Skip_Line;
+   Put(Collatz(N),0);
+
+end Lab05;
+
+
 ----------
 with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO; 
 use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
