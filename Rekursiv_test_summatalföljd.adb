@@ -9,7 +9,7 @@ procedure Lab05 is
 	 Put(" = ");
 	 return N;
       elsif N > 1 then
-	 Put(N,2); Put(" +");	 
+	 Put(Integer'Image(N) & " +");	 
 	 return N + Sum(N-1); 
       else 
 	 Put(N,2);
