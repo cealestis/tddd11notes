@@ -1,3 +1,50 @@
+with Ada.Text_IO; use Ada.Text_IO; 
+with Ada.Integer_Text_IO; use Ada.Integer_Text_IO; 
+
+procedure Fun is 
+   
+   
+   procedure Fun_Put(Item: in Integer) is
+      
+   begin
+      
+      if Item > 0 then
+	 
+	 New_Line; 
+	 
+	 Put(Item, Width => 0); 
+	 
+	 Fun_Put(Item-1);
+	 
+	 Put(Item, Width => 0); 
+	 
+      else
+	 
+	 New_Line; 
+	 
+	 Put(Item, Width => 0); 
+	 
+      end if; 
+       New_Line; 
+      
+   end Fun_Put; 
+   
+   
+   I: Integer; 
+begin
+   
+   Put("Ange din favvosiffra: "); 
+   Get(I); 
+   Fun_Put(I); 
+   
+   
+end Fun; 
+
+
+
+
+
+
 --------bättre version av moi
 With Ada.Text_IO, Ada.Integer_Text_IO; 
 use Ada.Text_IO, Ada.Integer_Text_IO;
