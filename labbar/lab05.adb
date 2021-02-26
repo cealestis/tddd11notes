@@ -1,3 +1,31 @@
+----------
+with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO; 
+use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+
+procedure Lab05 is
+   
+   function D (N: in Integer) return Integer is
+   begin
+      
+      if N = 1 then
+	 return 1;
+      else
+	 return 2*D(N-1)+1;
+      end if;
+      
+   end D;
+   
+   N: Integer;
+begin
+   
+   Put("Mata in antalet skivor i ditt torn: ");
+   Get(N);
+   
+   Put("Minsta antalet drag som krävs för denna storlek är: ");
+   Put(D(N),0);
+
+end Lab05;
+
 -------
 With Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO; 
 use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
