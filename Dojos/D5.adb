@@ -1,4 +1,4 @@
-With Ada.Text_IO, Ada.Integer_Text_IO; 
+with Ada.Text_IO, Ada.Integer_Text_IO; 
 use Ada.Text_IO, Ada.Integer_Text_IO;
 
 procedure Lab05 is    
@@ -6,13 +6,12 @@ procedure Lab05 is
    function One_Layer (Layer: in Integer) return Integer is
    begin
       
-      return Layer(2*Layer-1);
+      return Layer*(2*Layer-1);
       
    end One_Layer;
    
    
    function Stairs (Item: in Integer) return Integer is --räknar stenar
-      Summa: Integer;
    begin
            
       --Första Lagret:= 1 = 1(2*1-1);
