@@ -1,3 +1,31 @@
+-------
+With Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO; 
+use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+
+procedure Lab05 is
+   
+   function Put_Number_But_Make_It_Smaller(I : in Integer) return Integer is
+      
+   begin
+      
+      if I <= 1 then	 
+	 return I;	
+      else 
+	Put(I,0);
+	New_Line;
+	return Put_Number_But_Make_It_Smaller(I/10);
+      end if;      
+      
+   end Put_Number_But_Make_It_Smaller;
+
+   I : Integer;
+
+begin
+   Put("Mata in ett lagom stort tal: ");
+   Get(I); 
+   Put(Put_Number_But_Make_It_Smaller(I),1);
+   
+end Lab05;
 
 ------------
 
