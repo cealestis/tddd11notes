@@ -1,3 +1,35 @@
+------
+With Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO; 
+use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
+
+procedure Lab05 is     
+   
+   function Get_String return String is
+      S: String(1..3);
+     
+   begin           
+      
+      Get(S);            
+      
+      if S = "---" then
+	 Put_Line("Du matade in följande rader: ");
+	 return "";
+      end if;	
+      New_Line;
+      return Get_String & S;
+      
+   end Get_String;
+   
+begin
+   
+   Put_Line("Mata in ett antal rader (3 tecken per rad, avsluta med ""---"": ");
+   
+   Put(Get_String);
+   
+   
+end Lab05;
+
+
 -----------
 with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO; 
 use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
