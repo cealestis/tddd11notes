@@ -1,3 +1,49 @@
+-----
+With Ada.Text_IO, Ada.Integer_Text_IO; 
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Lab05 is     
+   
+   type Array_Type is
+     array (1..10) of Integer;
+   
+   procedure Get_Int(A: in out Array_Type; Index: in Integer) is
+   begin
+               
+      if Index > 10 then	 
+	 null;
+      else 
+	 Get(A(Index));
+	 Get_Int(A, Index+1);
+      end if; 
+      
+   end Get_Int;
+   
+   procedure Put_Int(A: in Array_Type; Index: in Integer) is
+   begin
+      
+      if Index > 10 then
+	 null;
+      else
+	 Put(' ');	 
+	 Put(A(Index),0);
+	 Put_Int(A, Index+1);
+      end if;      
+      
+   end Put_Int;
+   
+   A: Array_Type;
+   Index: Integer:= 1;
+begin
+      
+   Put("Mata in 10 heltal: ");
+   Get_Int(A,Index);
+   Put("Heltalen var:");
+   Put_Int(A,Index);      
+   
+end Lab05;
+
+
 ------
 With Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO; 
 use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
