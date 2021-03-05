@@ -1,0 +1,38 @@
+Programmet "first_test_of_random" hanterar slumpning av heltal, men
+det går att slumpa även andra uppräkningsbara datatyper.
+
+Begreppet "subtype" betyder att vi skapar oss en ny datatyp som
+fortfarande är samma datatyp som den vi använder för att skapa denna
+nya, MEN där vår nya "subtyp" endast klarar av att hantera en delmängd
+av de värden som den tidigare hade.
+
+Vi behöver skapa (instansiera) ett riktigt paket ifrån mallen (det
+generiska paketet) Ada.Numerics.Discrete_Random för att kunna använda
+slumpningen. Man kan säga att man kopierar mallen och sätter in det
+som saknas för att det skall fungera. Det nya paketet
+(Small_Integer_Random_Package) kan vi sen använda i vårt program. Vid
+instansieringen måste vi ange det som saknas i det generiska paketet
+(i detta fall vad vi skall slumpa för något, Small_Integer).
+
+Instansieringen motsvarar "with Small_Integer_Random_Package;" och vi
+kan sen göra "use" på detta paket för att slippa skriva paketnamnet
+vid varje del som använder delar av det. Byt ut raderna ovanför
+motsvarande rad med "--" framför så har vi ett likvärdigt program.
+
+Variabeln "G" som skappas är den som motsvarar "slumptalsgeneratorn".
+Vi bör påpeka att det är ok att skicka "G" som parameter mellan
+huvudprogram och underprogram. Detta gör att man kan utföra slumpning
+i underprogram utan att göra Reset flera gånger vilket man INTE skall
+göra för detta leder till oönskade slumptal (t.ex. flera lika i rad).
+
+För att detta skall vara ok är det ok att ha definitionen av sina
+"subtyper" och instansieringen av det generiska paketet i sitt
+huvudprogram. Detta är inte "globala variabler".
+	
+OBS! Vi är ibland lite luriga så att vi vill att ni t.ex.  slumpar
+tecken eller annat på tentan så lås inte fast er i att det skall vara
+Integer (Small_Integer) utan testa att göra ett program som slumpar
+tecken för att se vad som behöver ändras.
+
+Detta beskrivs inte så mycket i boken så det kan vara lämpligt att
+skriva detta på sin "fusklapp" till tentan.
