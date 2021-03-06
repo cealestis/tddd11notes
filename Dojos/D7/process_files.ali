@@ -1,0 +1,109 @@
+V "GNAT Lib v2019"
+M P W=b
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV SPARK_05
+
+U process_files%b	process_files.adb	0b5c1a0a NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.command_line%s	a-comlin.adb		a-comlin.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z interfaces%s		interfac.ads		interfac.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+D ada.ads		20190518041255 76789da1 ada%s
+D a-comlin.ads		20190518041255 4aa66568 ada.command_line%s
+D a-except.ads		20190518041255 291912d5 ada.exceptions%s
+D a-inteio.ads		20190518041256 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20190518041254 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20190518041255 119b8fb3 ada.streams%s
+D a-tags.ads		20190518041256 491b781d ada.tags%s
+D a-textio.ads		20190518041256 aef4d56d ada.text_io%s
+D a-tiinio.ads		20190518041254 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20190518041255 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20190518041254 5ab55268 interfaces%s
+D i-cstrea.ads		20190518041254 e53d8b8e interfaces.c_streams%s
+D process_files.adb	20210305140715 194523ab process_files%b
+D system.ads		20190518041255 085b6ffb system%s
+D s-crtl.ads		20190518041254 0ebbdb71 system.crtl%s
+D s-exctab.ads		20190518041255 54135002 system.exception_table%s
+D s-ficobl.ads		20190518041256 078245e4 system.file_control_block%s
+D s-parame.ads		20190518041256 48ec542b system.parameters%s
+D s-secsta.ads		20190518041256 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20190518041255 a7318a92 system.soft_links%s
+D s-stache.ads		20190518041256 a37c21ec system.stack_checking%s
+D s-stalib.ads		20190518041256 09bd3940 system.standard_library%s
+D s-stoele.ads		20190518041256 2dc34a04 system.storage_elements%s
+D s-traent.ads		20190518041254 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20190518041255 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20190518041255 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [process_files standard 5 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 13|1r6 1r28 2r6 2r23 3r6 3r31
+X 2 a-comlin.ads
+36K13*Command_Line 144e21 13|1w10 1r32
+39V13*Argument_Count{natural} 13|83s16
+52V13*Argument{string} 13|84s27 94s16 99s22
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[9|46] 13|3w10 3r35
+X 8 a-textio.ads
+57K13*Text_IO 727e16 13|2w10 2r27
+64P9*File_Type 13|10r39 52r14 71r11
+66n23*In_File{66E9} 13|84r18
+66n32*Out_File{66E9} 13|80r17
+66n42*Append_File{66E9} 13|55r18
+86I12*Field{integer}
+99U14*Create 13|80s4
+114U14*Open 13|55s7 84s7
+129U14*Close 13|67s7 81s4 103s7
+258U14*New_Line 13|63s7
+264U14*New_Line 13|97s7
+312V13*End_Of_File{boolean} 13|24s17
+459U14*Put 13|58s7 59s7 60s7 62s7
+465U14*Put 13|93s7
+471U14*Get_Line 13|25s10
+498U14*Put_Line 13|57s7
+508U14*Put_Line 13|94s7 95s7 96s7
+X 9 a-tiinio.ads
+68U14*Put 13|61s7[4|18]
+71i7 Width{8|86I12} 13|61r33[4|18]
+X 13 process_files.adb
+5U11*Process_Files 5b11 105l5 105t18
+10U14 Calculate_File 10b14 10>29 11<29 11<43 12<29 12<45 13<29 44l8 44t22
+. 87s7
+10p29 File{8|64P9} 24r29 25r19
+11a29 Longest_Word{string} 29m13
+11a43 Shortest_Word{string} 34m13
+12i29 Longest_Length{integer} 21m7 27r27 28m13
+12i45 Shortest_Length{integer} 22m7 32r27 33m13
+13f29 Average_Length{float} 42m7
+15a7 Word{string} 25m25 29r29 34r30
+16i7 Word_Length{integer} 25m31 27r13 28r31 32r13 33r32 38r41
+18i7 Total_Length{integer} 38m10 38r26 42r31
+18i21 Number_Of_Words{integer} 37m10 37r29 42r53
+46U14 Skriv_Till_Fil 46b14 46>29 47>29 47>43 48>29 48>45 49>29 69l8 69t22
+. 99s7
+46a29 File_Name{string}
+47a29 Longest_Word{string} 59r17
+47a43 Shortest_Word{string}
+48i29 Longest_Length{integer} 59r33 61r17
+48i45 Shortest_Length{integer}
+49f29 Average_Length{float}
+52p7 File{8|64P9} 55m12 55r12 57r16 58r11 59r11 60r11 61r11 62r11 63r16 67m13
+. 67r13
+71p4 File{8|64P9} 80m11 80r11 81m10 81r10 84m12 84r12 87r22 103m13 103r13
+74a4 Longest_Word{string} 88m22 95r16 100r22
+74a18 Shortest_Word{string} 88m36 96r16 100r36
+75i4 Longest_Length{integer} 89m22 95r32 100r51
+75i20 Shortest_Length{integer} 89m38 96r33 101r23
+76f4 Average_Length{float} 90m22 102r22
+83i8 I{integer} 84r36 94r25 99r31
+

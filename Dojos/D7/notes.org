@@ -1,0 +1,42 @@
+* Ada.Text_IO innehåller
+** proceduren Open(Fil, filmod, filnamn);
+** Filmod = In_File eller Out_File (append)
+   In_File = Inläsning!
+
+** Filnamn = sträng
+** Fil = File_Type
+
+** proceduren Close(File)
+   "Stänger filen"
+   Alltid
+
+* Checklista
+** DONE Hämta från terminalen (argument)
+*** Ada.Command_Line
+    Argument_Count = Antal argument
+    Argument(I) = Argument nummer I (I positiv)
+
+
+FÖR VARJE FIL
+** TODO Läsa från fil
+*** Läs tecken för tecken?
+*** While not end of file/line?
+
+** TODO Hitta längsta ord
+** TODO Hitta kortaste ord
+** TODO Beräkna medellängd av ord
+** TODO Skriv ut resultatet i annan fil
+*** Filnamnet
+*** Längsta ordet, längsta längden
+*** Korstaste ordet, kortaste längden
+*** Genomsnittliga längden
+
+* Antaganden
+** ord <= 100 tecken
+** rad = 1 ord
+** 1 argument = 1 filnamn
+
+* Lösning
+  
+* Önskelista
+** Ett program som lägger till i nya filen
