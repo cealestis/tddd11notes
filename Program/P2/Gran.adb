@@ -23,7 +23,7 @@ procedure P2 is
       
    end Sticks;
    
-   procedure Top (N,I: in Integer) is
+   procedure Top (N: in Integer) is
    begin
       
       Put_C_N_Times(' ', N);  
@@ -34,7 +34,7 @@ procedure P2 is
    procedure One_Tree (N, I: in Integer) is     
    begin      
       
-      Top(N,I); --denna loopas ju I antal gånger, men mellanrummen är statiska
+      Top(N); --denna loopas ju I antal gånger, men mellanrummen är statiska
       
       for Counter in 1..I loop  --N-Counter + 1 för att få första raden till att alltid bli max		
 	 Sticks(N,Counter);  -- -|-, --|-- osv  
