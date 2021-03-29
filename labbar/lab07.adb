@@ -1,3 +1,87 @@
+
+
+---------------------
+with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Numerics, Ada.Numerics.Elementary_Functions;
+use Ada.Text_IO, Ada.Integer_Text_IO, Ada.Numerics, Ada.Numerics.Elementary_Functions;
+
+procedure Lab07 is
+   
+   procedure Inmat (Slut: out Integer) is 
+   begin
+      
+      Put("Mata in slutvärde: ");
+      Get(Slut);
+      
+      Skip_Line;
+      
+   end Inmat;
+   
+   function Grad_To_Rad (Grad: in Float) return Float is
+   begin
+      
+      return (Pi*Grad)/180.0;
+      
+   end Grad_To_Rad; 
+   
+   function Calc_Sinus (Rad: in Float) return Integer is
+      Sinus_Value: Float;
+   begin
+      
+      Sinus_Value := Sin(Rad)*10.0; --ampl. är 10	      
+      
+      return 10 + Integer(Sinus_Value);
+      
+   end Calc_Sinus; 
+   
+   procedure Sinus_Kurwa (File: in out File_Type; Slut: in Integer) is
+      Start: Float := 0.0;           
+      Dots: Integer;
+      Slut_F: Float;
+      Steg: Float := 10.0; 
+      Start_Rad: Float;  
+   begin      
+      
+      Slut_F:= Float(Slut);
+      
+      loop
+	 
+	 Start_Rad:= Grad_To_Rad(Start);
+	 
+	 Dots:= Calc_Sinus(Start_Rad);
+	 
+	 for C in 1..Dots loop
+	    Put(File, '.');
+	 end loop;
+	 
+	 Put(File, '0');
+	 
+	 New_Line(File);
+	 
+	 Start:= Start + Steg;      
+	 
+	 exit when Start > Slut_F;	  
+	 
+      end loop;   
+
+
+   end Sinus_Kurwa;
+   
+   Slut: Integer;
+   File: File_Type;
+   Filename: constant String := "SINUS.TXT";
+begin   
+   
+   Inmat(Slut);         
+   
+   Create(File, Out_File, Filename);
+   
+   Sinus_Kurwa(File, Slut);
+   
+   Close(File);
+   
+end Lab07;
+
+
 ---------------------
 with Ada.Text_IO, Ada.Integer_Text_IO; 
 use Ada.Text_IO, Ada.Integer_Text_IO;
